@@ -1,58 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCAT Disease-Driven Systems Map</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MCAT: Learn Biology Through Disease</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-:root {
-  --bg:#faf8f4;--bg2:#f2efe8;--card:#fff;--text:#1a1714;--text2:#4a453d;--text3:#8a8378;
-  --border:#e0dbd2;--border2:#d0c9be;
-  --red:#b5432a;--red-bg:#fdf0ec;--red-border:#f0c4b8;
-  --blue:#2a5e8b;--blue-bg:#edf4fa;--blue-border:#b8d4f0;
-  --green:#2a7d4e;--green-bg:#edf7f0;--green-border:#b8e0c8;
-  --amber:#9a6c11;--amber-bg:#fdf6e8;--amber-border:#e8d4a0;
-  --purple:#5a3a8b;--purple-bg:#f4eefa;--purple-border:#c8b8e0;
-  --teal:#1a6b6b;--teal-bg:#ecf6f6;--teal-border:#a8d8d8;
-  --shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.03);
-  --radius:10px;
-  --display:'Cormorant Garamond',Georgia,serif;
-  --body:'Manrope',sans-serif;
-  --mono:'JetBrains Mono',monospace;
+:root{
+--bg:#faf8f4;--bg2:#f2efe8;--card:#fff;--text:#1a1714;--text2:#4a453d;--text3:#8a8378;
+--border:#e0dbd2;--border2:#d0c9be;
+--red:#b5432a;--red-bg:#fdf0ec;--red-border:#f0c4b8;
+--blue:#2a5e8b;--blue-bg:#edf4fa;--blue-border:#b8d4f0;
+--green:#2a7d4e;--green-bg:#edf7f0;--green-border:#b8e0c8;
+--amber:#9a6c11;--amber-bg:#fdf6e8;--amber-border:#e8d4a0;
+--purple:#5a3a8b;--purple-bg:#f4eefa;--purple-border:#c8b8e0;
+--teal:#1a6b6b;--teal-bg:#ecf6f6;--teal-border:#a8d8d8;
+--shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.03);
+--radius:10px;
+--display:'Cormorant Garamond',Georgia,serif;
+--body:'Manrope',sans-serif;
+--mono:'JetBrains Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.78;font-size:15.5px;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--red);color:#fff}
-
-/* HERO */
 .hero{background:linear-gradient(170deg,#1a1714 0%,#2d2821 50%,#3d352c 100%);color:#faf8f4;padding:4.5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
 .hero h1{font-family:var(--display);font-size:clamp(2.4rem,5.5vw,3.8rem);font-weight:700;letter-spacing:-0.02em;line-height:1.15;position:relative}
 .hero h1 em{font-style:italic;color:#e8b87a;font-weight:400}
 .hero .sub{font-size:1.05rem;color:rgba(250,248,244,0.6);max-width:620px;margin:0.8rem auto 0;position:relative;font-weight:300}
 .hero .concept{display:inline-block;margin:1.5rem 0.3rem 0;padding:0.25rem 0.75rem;border-radius:20px;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);color:rgba(250,248,244,0.5);position:relative}
-
-/* NAV */
-.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0;position:sticky;top:0;z-index:100;overflow-x:auto;display:flex;max-width:100%}
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0;position:sticky;top:0;z-index:100;overflow-x:auto;display:flex}
 .nav button{background:none;border:none;color:var(--text3);font-family:var(--body);font-size:0.82rem;font-weight:600;padding:0.85rem 1.1rem;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;letter-spacing:0.01em}
 .nav button:hover{color:var(--text)}
 .nav button.active{color:var(--red);border-bottom-color:var(--red)}
-
-/* LAYOUT */
 .container{max-width:880px;margin:0 auto;padding:2.5rem 1.25rem 5rem}
 .section{display:none}
 .section.active{display:block;animation:fadeUp 0.4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* DISEASE HEADER */
-.disease-header{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-.disease-header h2{font-family:var(--display);font-size:2rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:0.3rem}
-.disease-header .subtitle{font-size:0.95rem;color:var(--text2);font-weight:400}
-.disease-header .genetics-badge{display:inline-block;margin-top:0.6rem;padding:0.2rem 0.7rem;border-radius:16px;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
-
-/* CONCEPT TAGS */
-.concepts-taught{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.8rem}
+.dh{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.dh h2{font-family:var(--display);font-size:2rem;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:0.3rem}
+.dh .st{font-size:0.95rem;color:var(--text2);font-weight:400}
+.dh .gb{display:inline-block;margin-top:0.6rem;padding:0.2rem 0.7rem;border-radius:16px;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
+.ct-row{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.8rem}
 .ct{padding:0.2rem 0.55rem;border-radius:14px;font-size:0.68rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase}
 .ct-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
 .ct-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
@@ -60,595 +47,588 @@ body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:
 .ct-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
 .ct-purple{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-border)}
 .ct-teal{background:var(--teal-bg);color:var(--teal);border:1px solid var(--teal-border)}
-
-/* PROSE CARDS */
-.prose{margin-bottom:1.5rem}
-.prose p{color:var(--text2);margin-bottom:0.7rem}
-.prose strong{color:var(--text);font-weight:600}
-
-/* CALLOUT BOXES */
+.p{color:var(--text2);margin-bottom:0.7rem;font-size:0.95rem}
+.p strong{color:var(--text);font-weight:600}
+.sh{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--text);margin:2rem 0 0.8rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.sh:first-of-type{margin-top:0;padding-top:0;border-top:none}
 .box{border-radius:var(--radius);padding:1.1rem 1.3rem;margin:1.2rem 0;font-size:0.92rem;line-height:1.7}
-.box .label{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
-.box p{margin-bottom:0.4rem}
+.box .lb{font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3rem}
+.box p{margin-bottom:0.4rem;color:var(--text2)}
 .box-chain{background:var(--blue-bg);border:1px solid var(--blue-border);border-left:3px solid var(--blue)}
-.box-chain .label{color:var(--blue)}
+.box-chain .lb{color:var(--blue)}
 .box-yield{background:var(--green-bg);border:1px solid var(--green-border);border-left:3px solid var(--green)}
-.box-yield .label{color:var(--green)}
+.box-yield .lb{color:var(--green)}
 .box-trap{background:var(--amber-bg);border:1px solid var(--amber-border);border-left:3px solid var(--amber)}
-.box-trap .label{color:var(--amber)}
+.box-trap .lb{color:var(--amber)}
 .box-mcat{background:var(--purple-bg);border:1px solid var(--purple-border);border-left:3px solid var(--purple)}
-.box-mcat .label{color:var(--purple)}
+.box-mcat .lb{color:var(--purple)}
 .box-connect{background:var(--teal-bg);border:1px solid var(--teal-border);border-left:3px solid var(--teal)}
-.box-connect .label{color:var(--teal)}
+.box-connect .lb{color:var(--teal)}
 .box-story{background:var(--red-bg);border:1px solid var(--red-border);border-left:3px solid var(--red)}
-.box-story .label{color:var(--red)}
-
-/* CHAIN DIAGRAM */
-.chain{display:flex;flex-wrap:wrap;align-items:center;gap:0.3rem;margin:0.8rem 0;font-size:0.85rem;font-weight:500}
-.chain .node{padding:0.3rem 0.65rem;border-radius:6px;background:rgba(42,94,139,0.08);color:var(--blue);border:1px solid var(--blue-border)}
-.chain .arrow{color:var(--text3);font-size:0.9rem}
-
-/* TABLES */
+.box-story .lb{color:var(--red)}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:0.3rem;margin:0.8rem 0;font-size:0.84rem;font-weight:500}
+.chain .nd{padding:0.3rem 0.6rem;border-radius:6px;background:rgba(42,94,139,0.08);color:var(--blue);border:1px solid var(--blue-border)}
+.chain .ar{color:var(--text3);font-size:0.9rem}
 table.dt{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.88rem}
 table.dt th{background:var(--bg2);color:var(--text);font-weight:700;text-align:left;padding:0.55rem 0.7rem;border:1px solid var(--border);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.04em}
 table.dt td{padding:0.5rem 0.7rem;border:1px solid var(--border);color:var(--text2);vertical-align:top}
 table.dt tr:hover td{background:rgba(181,67,42,0.02)}
-table.dt code{font-family:var(--mono);font-size:0.82rem;color:var(--red);background:var(--red-bg);padding:0.1rem 0.35rem;border-radius:3px}
-
-/* INDEX CARD */
-.index-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1rem;cursor:pointer;transition:all 0.2s;box-shadow:var(--shadow)}
-.index-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-.index-card h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:0.15rem;color:var(--text)}
-.index-card .ic-sub{font-size:0.85rem;color:var(--text3);margin-bottom:0.5rem}
-.index-card .ic-teaches{font-size:0.78rem;color:var(--text2);font-weight:500}
-
-/* RESPONSIVE */
+/* CHECK YOURSELF */
+.check{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.5rem 0;box-shadow:var(--shadow)}
+.check .ck-head{font-weight:700;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--red);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.4rem}
+.check .ck-head::before{content:'✓';display:inline-flex;width:20px;height:20px;border-radius:50%;background:var(--red-bg);color:var(--red);align-items:center;justify-content:center;font-size:0.7rem;font-weight:700}
+.ck-q{font-size:0.92rem;color:var(--text);margin-bottom:0.7rem;font-weight:500}
+.ck-opts{display:flex;flex-direction:column;gap:0.4rem}
+.ck-opt{display:flex;align-items:flex-start;gap:0.6rem;padding:0.55rem 0.85rem;border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:0.9rem;color:var(--text2);transition:all 0.15s}
+.ck-opt:hover{border-color:var(--blue);background:var(--blue-bg)}
+.ck-opt.chosen{border-color:var(--blue);background:var(--blue-bg)}
+.ck-opt.right{border-color:var(--green);background:var(--green-bg);color:var(--green)}
+.ck-opt.wrongc{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.ck-opt.reveal{border-color:var(--green);background:var(--green-bg);opacity:0.7}
+.ck-ltr{font-family:var(--mono);font-weight:600;font-size:0.8rem;min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:var(--bg2);color:var(--text3);flex-shrink:0}
+.ck-opt.right .ck-ltr{background:var(--green);color:#fff}
+.ck-opt.wrongc .ck-ltr{background:var(--red);color:#fff}
+.ck-fb{display:none;margin-top:0.7rem;padding:0.8rem 1rem;border-radius:8px;font-size:0.88rem;line-height:1.6;color:var(--text2)}
+.ck-fb.show{display:block;animation:fadeUp 0.3s ease}
+.ck-fb-right{background:var(--green-bg);border:1px solid var(--green-border)}
+.ck-fb-wrong{background:var(--red-bg);border:1px solid var(--red-border)}
+/* MCAT EXAMPLE */
+.mcat-ex{background:var(--card);border:2px solid var(--purple-border);border-radius:var(--radius);padding:1.4rem 1.5rem;margin:2rem 0;box-shadow:0 2px 12px rgba(90,58,139,0.06)}
+.mcat-ex .mx-head{font-weight:700;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--purple);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem}
+.mcat-ex .mx-head::before{content:'★';font-size:0.75rem}
+.mx-passage{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.1rem;margin-bottom:0.8rem;font-size:0.88rem;color:var(--text2);font-style:italic;line-height:1.7}
+/* INDEX */
+.idx{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:1rem;cursor:pointer;transition:all 0.2s;box-shadow:var(--shadow)}
+.idx:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.idx h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:0.15rem;color:var(--text)}
+.idx .is{font-size:0.85rem;color:var(--text3);margin-bottom:0.5rem}
 @media(max-width:700px){.container{padding:1.5rem 1rem 3rem}.hero{padding:3rem 1.5rem 2.5rem}.chain{font-size:0.78rem}.nav button{padding:0.75rem 0.85rem;font-size:0.78rem}}
-</style>
-</head>
-<body>
-<div class="hero">
-<h1>Learn Biology Through <em>Disease</em></h1>
-<p class="sub">Every genetic disease is a natural experiment that reveals how the body works. Learn systems by understanding what happens when they fail.</p>
-<span class="concept">Protein Structure</span>
-<span class="concept">Membrane Transport</span>
-<span class="concept">Enzyme Kinetics</span>
-<span class="concept">Signaling</span>
-<span class="concept">Acid-Base</span>
-<span class="concept">Renal</span>
-<span class="concept">Genetics</span>
-<span class="concept">Metabolism</span>
-</div>
+</style></head><body>
+<div class="hero"><h1>Learn Biology Through <em>Disease</em></h1>
+<p class="sub">Every genetic disease is a natural experiment. Learn systems by understanding what happens when they fail. Deep explanations, comprehension checks, and MCAT examples.</p>
+<span class="concept">Protein Structure</span><span class="concept">Membrane Transport</span><span class="concept">Enzyme Kinetics</span><span class="concept">Signaling</span><span class="concept">Acid-Base</span><span class="concept">Renal</span><span class="concept">Genetics</span><span class="concept">Metabolism</span></div>
 <div class="nav"><button class=\'active\' onclick="showSection('overview')">Disease Map</button>
 <button  onclick="showSection('sickle')">Sickle Cell</button>
 <button  onclick="showSection('cf')">Cystic Fibrosis</button>
 <button  onclick="showSection('huntington')">Huntington</button>
 <button  onclick="showSection('pku')">PKU</button>
 <button  onclick="showSection('diabetes')">Type 1 Diabetes</button>
-<button  onclick="showSection('g6pd')">G6PD Deficiency</button>
+<button  onclick="showSection('g6pd')">G6PD</button>
 <button  onclick="showSection('marfan')">Marfan</button>
 <button  onclick="showSection('lsd')">Lysosomal Storage</button></div>
 <div class="container">
 
 <div class="section active" id="sec-overview">
-<div class="disease-header">
-<h2>The Idea: Learn Systems Through Stories</h2>
-<div class="subtitle">Every genetic disease is a natural experiment that reveals how the body works</div>
-</div>
-
-<div class="prose">
-<p>Medical school admissions committees do not want students who memorized a textbook. They want students who can <strong>think across systems</strong>. The MCAT is designed to test exactly this: give a student a clinical scenario and see if they can trace the molecular, cellular, and physiological chain of events.</p>
-
-<p>The most memorable way to learn these connections is through disease. When you understand <strong>why</strong> a sickle cell patient cannot concentrate their urine, you have simultaneously learned hemoglobin biochemistry, Mendelian genetics, renal countercurrent mechanisms, and population genetics. The disease is not an add-on to be memorized after learning the "real" biology. The disease <strong>is</strong> the biology, made visible.</p>
-
-<p>Each disease in this guide was chosen because it teaches the maximum number of foundational MCAT concepts in a way that is inherently memorable. A single point mutation causing a glutamic acid to valine substitution is far more memorable than an abstract lecture on protein folding, and it teaches you more.</p>
-</div>
-
-<div class="box box-mcat">
-<div class="label">How to Use This Guide</div>
-<p>Each disease page shows you the <strong>concepts it teaches</strong> as colored tags at the top. As you work through the diseases, you will notice the same foundational concepts appearing again and again in different contexts. That repetition across different disease stories is what builds deep understanding. By the time you have worked through all of them, you will have covered the major MCAT biology and biochemistry concepts multiple times, each from a different angle.</p>
-</div>
+<div class="dh"><h2>Learn Biology Through Disease</h2>
+<div class="st">Each disease is a story that naturally teaches multiple foundational concepts</div></div>
+<p class="p">The MCAT does not test whether you memorized a textbook. It tests whether you can <strong>think across systems</strong>. When a passage describes a patient with kidney disease, the questions might ask about acid-base balance, hormone production, bone density, or blood pressure regulation. The students who struggle are the ones who learned each system in isolation. The students who excel are the ones who understand <strong>how everything connects</strong>.</p>
+<p class="p">The most natural way to learn these connections is through genetic diseases. A disease is what happens when one piece of the biological machine breaks. By understanding the downstream consequences of that break, you learn how all the pieces fit together. A student who truly understands sickle cell disease has, almost without trying, learned protein structure, hemoglobin cooperativity, Mendelian genetics, population genetics, renal physiology, immune function, and cardiovascular biology.</p>
+<p class="p">Each disease in this guide was chosen because it teaches the maximum number of MCAT-relevant concepts in a way that is inherently memorable. The guide goes deep enough that you can actually <strong>learn</strong> from reading it, not just see a list of connections. Simple comprehension checks after each section let you test yourself immediately, and MCAT-style example questions at the end of each disease show you what these concepts look like on test day.</p>
 
 <div style="margin-top:2rem">
-<div class="index-card" onclick="showSection('sickle')">
-<h3>Sickle Cell Disease</h3>
-<div class="ic-sub">A single amino acid change that teaches half of biology</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Protein Structure</span><span class="ct ct-blue">Hemoglobin</span><span class="ct ct-green">Mendelian Genetics</span><span class="ct ct-amber">Population Genetics</span><span class="ct ct-purple">Renal Physiology</span><span class="ct ct-teal">Immune Function</span>
+<div class="idx" onclick="showSection('sickle')"><h3>1. Sickle Cell Disease</h3><div class="is">A single amino acid change that teaches you protein structure, hemoglobin biochemistry, renal physiology, immune function, and population genetics</div><div class="ct-row"><span class="ct ct-red">Protein Structure</span><span class="ct ct-blue">Hemoglobin</span><span class="ct ct-green">Mendelian Genetics</span><span class="ct ct-amber">Population Genetics</span><span class="ct ct-purple">Renal</span><span class="ct ct-teal">Immune</span></div></div>
+<div class="idx" onclick="showSection('cf')"><h3>2. Cystic Fibrosis</h3><div class="is">How a misfolded chloride channel teaches the secretory pathway, membrane biology, GPCR signaling, and organ system crosstalk</div><div class="ct-row"><span class="ct ct-red">Membrane Transport</span><span class="ct ct-blue">Protein Processing</span><span class="ct ct-green">GPCR Signaling</span><span class="ct ct-amber">Respiratory</span><span class="ct ct-purple">Pancreatic</span><span class="ct ct-teal">Vitamins</span></div></div>
+<div class="idx" onclick="showSection('huntington')"><h3>3. Huntington Disease</h3><div class="is">Trinucleotide repeats, anticipation, basal ganglia motor circuits, and the ethics of genetic testing</div><div class="ct-row"><span class="ct ct-red">Trinucleotide Repeats</span><span class="ct ct-blue">AD Inheritance</span><span class="ct ct-green">GABA/Neurotransmission</span><span class="ct ct-amber">Basal Ganglia</span><span class="ct ct-purple">Anticipation</span></div></div>
+<div class="idx" onclick="showSection('pku')"><h3>4. Phenylketonuria (PKU)</h3><div class="is">Enzyme kinetics, amino acid metabolism, cofactors, and the blood-brain barrier, all from one blocked pathway</div><div class="ct-row"><span class="ct ct-red">Enzyme Kinetics</span><span class="ct ct-blue">Amino Acids</span><span class="ct ct-green">Cofactors</span><span class="ct ct-amber">BBB Transport</span><span class="ct ct-purple">Neurotransmitter Synthesis</span></div></div>
+<div class="idx" onclick="showSection('diabetes')"><h3>5. Type 1 Diabetes</h3><div class="is">Receptor tyrosine kinases, every major metabolic pathway, acid-base physiology, and the body's greatest domino chain</div><div class="ct-row"><span class="ct ct-red">RTK Signaling</span><span class="ct ct-blue">Metabolism</span><span class="ct ct-green">Acid-Base</span><span class="ct ct-amber">Renal</span><span class="ct ct-purple">Cardiovascular</span><span class="ct ct-teal">Autoimmunity</span></div></div>
+<div class="idx" onclick="showSection('g6pd')"><h3>6. G6PD Deficiency</h3><div class="is">The pentose phosphate pathway, NADPH, oxidative stress, and pharmacogenomics through hemolytic crises</div><div class="ct-row"><span class="ct ct-red">PPP</span><span class="ct ct-blue">NADPH</span><span class="ct ct-green">X-Linked</span><span class="ct ct-amber">RBC Metabolism</span><span class="ct ct-purple">Glutathione</span></div></div>
+<div class="idx" onclick="showSection('marfan')"><h3>7. Marfan Syndrome</h3><div class="is">Connective tissue biology, TGF-beta signaling, pleiotropy, and why structural proteins matter</div><div class="ct-row"><span class="ct ct-red">ECM</span><span class="ct ct-blue">TGF-beta</span><span class="ct ct-green">AD Inheritance</span><span class="ct ct-amber">Pleiotropy</span><span class="ct ct-purple">Cardiovascular</span></div></div>
+<div class="idx" onclick="showSection('lsd')"><h3>8. Lysosomal Storage Diseases</h3><div class="is">The cell's recycling center, sphingolipid degradation, enzyme targeting, and population genetics</div><div class="ct-row"><span class="ct ct-red">Lysosomes</span><span class="ct ct-blue">Lipid Metabolism</span><span class="ct ct-green">M6P Targeting</span><span class="ct ct-amber">Sphingolipids</span><span class="ct ct-purple">Founder Effect</span></div></div>
 </div>
 </div>
-
-<div class="index-card" onclick="showSection('cf')">
-<h3>Cystic Fibrosis</h3>
-<div class="ic-sub">Membrane transport, protein processing, and organ system crosstalk</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Membrane Transport</span><span class="ct ct-blue">Protein Folding</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Respiratory Physiology</span><span class="ct ct-purple">Pancreatic Function</span><span class="ct ct-teal">Reproductive Biology</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('huntington')">
-<h3>Huntington Disease</h3>
-<div class="ic-sub">Neurodegeneration, trinucleotide repeats, and the cruelty of dominant inheritance</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Trinucleotide Repeats</span><span class="ct ct-blue">AD Inheritance</span><span class="ct ct-green">Neurotransmission</span><span class="ct ct-amber">Anticipation</span><span class="ct ct-purple">Protein Aggregation</span><span class="ct ct-teal">Basal Ganglia</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('pku')">
-<h3>Phenylketonuria (PKU)</h3>
-<div class="ic-sub">Enzyme deficiency, amino acid metabolism, and newborn screening</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Enzyme Kinetics</span><span class="ct ct-blue">Amino Acid Metabolism</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Cofactors (BH4)</span><span class="ct ct-purple">Neurodevelopment</span><span class="ct ct-teal">Screening Ethics</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('diabetes')">
-<h3>Type 1 Diabetes</h3>
-<div class="ic-sub">Autoimmunity, insulin signaling, and the body's greatest domino chain</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Receptor Tyrosine Kinases</span><span class="ct ct-blue">Autoimmunity</span><span class="ct ct-green">Metabolic Pathways</span><span class="ct ct-amber">Acid-Base Balance</span><span class="ct ct-purple">Renal Physiology</span><span class="ct ct-teal">Cardiovascular</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('g6pd')">
-<h3>G6PD Deficiency</h3>
-<div class="ic-sub">The pentose phosphate pathway made unforgettable</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Pentose Phosphate Pathway</span><span class="ct ct-blue">Oxidative Stress</span><span class="ct ct-green">X-Linked Inheritance</span><span class="ct ct-amber">RBC Metabolism</span><span class="ct ct-purple">Pharmacogenomics</span><span class="ct ct-teal">Malaria Resistance</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('marfan')">
-<h3>Marfan Syndrome</h3>
-<div class="ic-sub">Connective tissue, TGF-beta signaling, and why structure matters</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Extracellular Matrix</span><span class="ct ct-blue">TGF-beta Signaling</span><span class="ct ct-green">AD Inheritance</span><span class="ct ct-amber">Cardiovascular Anatomy</span><span class="ct ct-purple">Protein Structure</span><span class="ct ct-teal">Pleiotropic Effects</span>
-</div>
-</div>
-
-<div class="index-card" onclick="showSection('lsd')">
-<h3>Lysosomal Storage Diseases</h3>
-<div class="ic-sub">Tay-Sachs, Gaucher, and the cell's recycling center</div>
-<div class="concepts-taught">
-<span class="ct ct-red">Lysosomes</span><span class="ct ct-blue">Lipid Metabolism</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Enzyme Targeting</span><span class="ct ct-purple">Neurodegeneration</span><span class="ct ct-teal">Population Genetics</span>
-</div>
-</div>
-</div>
-</div>
-
 
 <div class="section" id="sec-sickle">
-<div class="disease-header">
-<h2>Sickle Cell Disease</h2>
-<div class="subtitle">A single amino acid substitution that teaches you half of biology</div>
-<span class="genetics-badge" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Protein Structure</span><span class="ct ct-blue">Hemoglobin/O2 Transport</span><span class="ct ct-green">Mendelian Genetics</span><span class="ct ct-amber">Population Genetics</span><span class="ct ct-purple">Renal Physiology</span><span class="ct ct-teal">Immune Function</span>
-</div>
+<div class="dh"><h2>Sickle Cell Disease</h2>
+<div class="st">A single amino acid substitution that teaches you half of biology</div>
+<span class="gb" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span>
+<div class="ct-row"><span class="ct ct-red">Protein Structure</span><span class="ct ct-blue">Hemoglobin/O2 Transport</span><span class="ct ct-green">Mendelian Genetics</span><span class="ct ct-amber">Population Genetics</span><span class="ct ct-purple">Renal Physiology</span><span class="ct ct-teal">Immune Function</span></div>
 </div>
 
-<div class="prose">
-<p>Sickle cell disease begins with the smallest possible change to a protein: a single nucleotide mutation in the beta-globin gene (GAG to GTG) that replaces <strong>glutamic acid</strong> (hydrophilic, negatively charged at pH 7.4) with <strong>valine</strong> (hydrophobic, nonpolar) at position 6. This one substitution transforms one of the most elegant molecules in the body into one of the most destructive.</p>
+<h3 class="sh">The Mutation: What Changes and Why It Matters</h3>
+<p class="p">Everything in sickle cell disease starts with one nucleotide change in the beta-globin gene: <strong>GAG becomes GTG</strong>. In the genetic code, GAG codes for glutamic acid and GTG codes for valine. These two amino acids could not be more different. Glutamic acid is <strong>hydrophilic and negatively charged</strong> at physiological pH (its side chain pKa is about 4.1, well below 7.4, so it is deprotonated and carries a negative charge). Valine is <strong>hydrophobic and nonpolar</strong> (its side chain is a branched hydrocarbon with no charge at any pH).</p>
+<p class="p">This matters because the substitution occurs at <strong>position 6 of the beta chain</strong>, which sits on the surface of the hemoglobin molecule. Normally, the negatively charged glutamic acid at this position faces outward toward the aqueous environment, which is energetically favorable because charged residues interact well with water. When valine replaces it, a hydrophobic "sticky patch" is now exposed on the protein surface. This is the molecular origin of the entire disease.</p>
+
+<div class="box box-yield"><div class="lb">Why This Teaches Protein Structure</div>
+<p>This single disease teaches you all four levels of protein structure simultaneously. The <strong>primary structure</strong> change (Glu to Val) alters <strong>tertiary structure</strong> (creates a new hydrophobic patch on the protein surface). Under low-oxygen conditions, this hydrophobic patch on one HbS molecule finds and inserts into a complementary hydrophobic pocket on an adjacent HbS molecule, driving <strong>quaternary aggregation</strong> into long, rigid fibers. The same forces that normally stabilize protein folding (hydrophobic interactions, van der Waals forces) are now driving pathological polymerization. The rigid HbS polymers push against the red blood cell membrane from inside, deforming it from a flexible biconcave disc into a rigid, crescent-shaped "sickle" cell.</p>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Protein Structure and Function</div>
-<p>This single mutation teaches primary, tertiary, and quaternary structure simultaneously. The primary structure change (Glu to Val) alters the surface chemistry of the protein. Under low-oxygen conditions, the hydrophobic valine on one HbS molecule inserts into a hydrophobic pocket on another HbS molecule, causing polymerization into rigid fibers. This is <strong>quaternary structure gone wrong</strong>: the same intermolecular forces that normally allow hemoglobin subunits to cooperate (hydrophobic interactions, van der Waals forces) now drive pathological aggregation. The rigid polymers deform the red blood cell from its normal biconcave disc into the characteristic sickle shape.</p>
+<div class="check" id="sc1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Glutamic acid at position 6 of normal hemoglobin is replaced by valine in sickle hemoglobin. What property of valine drives HbS polymerization?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc1',0,1,`Valine is hydrophobic and nonpolar. The exposed hydrophobic patch on one HbS molecule is driven to associate with a hydrophobic pocket on another, just as oil droplets in water are driven to merge. This is the hydrophobic effect causing pathological aggregation.`)"><span class="ck-ltr">A</span><span>Valine is positively charged, attracting negatively charged residues on adjacent molecules</span></div>
+<div class="ck-opt" onclick="checkAns('sc1',1,1,`Valine is hydrophobic and nonpolar. The exposed hydrophobic patch on one HbS molecule is driven to associate with a hydrophobic pocket on another, just as oil droplets in water are driven to merge. This is the hydrophobic effect causing pathological aggregation.`)"><span class="ck-ltr">B</span><span>Valine is hydrophobic, creating a sticky patch that interacts with hydrophobic pockets on other HbS molecules</span></div>
+<div class="ck-opt" onclick="checkAns('sc1',2,1,`Valine is hydrophobic and nonpolar. The exposed hydrophobic patch on one HbS molecule is driven to associate with a hydrophobic pocket on another, just as oil droplets in water are driven to merge. This is the hydrophobic effect causing pathological aggregation.`)"><span class="ck-ltr">C</span><span>Valine is smaller than glutamic acid, creating a gap that destabilizes the protein</span></div>
+<div class="ck-opt" onclick="checkAns('sc1',3,1,`Valine is hydrophobic and nonpolar. The exposed hydrophobic patch on one HbS molecule is driven to associate with a hydrophobic pocket on another, just as oil droplets in water are driven to merge. This is the hydrophobic effect causing pathological aggregation.`)"><span class="ck-ltr">D</span><span>Valine forms disulfide bonds with cysteine residues on adjacent molecules</span></div>
+</div>
+<div class="ck-fb" id="sc1-fb"></div>
 </div>
 
-<div class="prose">
-<p>Normal hemoglobin (HbA) is a tetramer of two alpha and two beta subunits, each carrying a heme group with an iron atom that reversibly binds oxygen. Hemoglobin exhibits <strong>cooperative binding</strong>: when one subunit binds O2, it changes conformation (T state to R state), making it easier for the other subunits to bind O2. This produces the sigmoidal oxygen-hemoglobin dissociation curve. The Hill coefficient for hemoglobin is about 2.8 (positive cooperativity; n=1 would be hyperbolic like myoglobin).</p>
+<h3 class="sh">Hemoglobin and Oxygen: The Cooperativity Story</h3>
+<p class="p">To understand why sickle cells form only under certain conditions, you need to understand how hemoglobin works normally. Hemoglobin is a <strong>tetramer</strong> made of two alpha subunits and two beta subunits (alpha2-beta2). Each subunit contains a <strong>heme group</strong>, which is a porphyrin ring with an iron atom (Fe2+) at its center. The iron reversibly binds one molecule of O2, so each hemoglobin tetramer can carry up to four O2 molecules.</p>
+<p class="p">Here is the critical concept: hemoglobin exhibits <strong>cooperative binding</strong>. When the first O2 binds to one subunit, it causes a conformational change in that subunit (from the <strong>T state</strong>, "tense," low affinity, to the <strong>R state</strong>, "relaxed," high affinity). Because the four subunits are physically connected, this conformational change is transmitted to the neighboring subunits, making it easier for the next O2 to bind. Each successive O2 binds more easily than the last. This produces the characteristic <strong>sigmoidal</strong> (S-shaped) oxygen-hemoglobin dissociation curve, as opposed to the hyperbolic curve of myoglobin (which is a single subunit with no cooperativity).</p>
+<p class="p">The <strong>Hill coefficient</strong> quantifies cooperativity. For hemoglobin, the Hill coefficient is about 2.8. A Hill coefficient of 1 means no cooperativity (hyperbolic curve). Greater than 1 means positive cooperativity. The maximum possible Hill coefficient for hemoglobin would be 4 (the number of binding sites), but the actual value is lower because cooperativity is not perfect.</p>
 
-<p>In sickle cell disease, deoxygenated HbS polymerizes. This means sickling is triggered by conditions that promote the T (deoxy) state: low pO2, low pH (Bohr effect: H+ ions stabilize T state), high CO2, high temperature, and high 2,3-BPG. Every factor that shifts the curve right increases sickling risk.</p>
-</div>
-
-<div class="box box-chain">
-<div class="label">The Domino Chain: One Mutation, Every System</div>
-<div class="chain">
-<span class="node">GAG&#8594;GTG mutation</span><span class="arrow">&#8594;</span>
-<span class="node">Glu&#8594;Val at &#946;-6</span><span class="arrow">&#8594;</span>
-<span class="node">HbS polymerizes when deoxy</span><span class="arrow">&#8594;</span>
-<span class="node">RBC sickling</span><span class="arrow">&#8594;</span>
-<span class="node">Vaso-occlusion</span>
-</div>
-<p>From vaso-occlusion, the damage radiates outward to every organ:</p>
-<div class="chain">
-<span class="node">Splenic infarction</span><span class="arrow">&#8594;</span>
-<span class="node">Functional asplenia</span><span class="arrow">&#8594;</span>
-<span class="node">Susceptibility to encapsulated bacteria</span>
-</div>
-<div class="chain">
-<span class="node">Vasa recta sickling</span><span class="arrow">&#8594;</span>
-<span class="node">Medullary damage</span><span class="arrow">&#8594;</span>
-<span class="node">Cannot concentrate urine</span><span class="arrow">&#8594;</span>
-<span class="node">Dehydration</span><span class="arrow">&#8594;</span>
-<span class="node">More sickling</span>
-</div>
-<div class="chain">
-<span class="node">Chronic hemolysis</span><span class="arrow">&#8594;</span>
-<span class="node">Elevated bilirubin</span><span class="arrow">&#8594;</span>
-<span class="node">Jaundice + Pigment gallstones</span>
-</div>
-<div class="chain">
-<span class="node">Bone marrow expands</span><span class="arrow">&#8594;</span>
-<span class="node">"Crew cut" skull X-ray</span>
-</div>
+<div class="box box-chain"><div class="lb">Why This Matters for Sickle Cell</div>
+<p>HbS only polymerizes in the <strong>deoxygenated (T) state</strong>. In the T state, the hydrophobic pocket that accepts the valine sticky patch is exposed. In the R (oxygenated) state, the pocket is hidden inside the protein. This means anything that shifts hemoglobin toward the T state increases sickling:</p>
+<div class="chain"><span class="nd">Low pO2</span><span class="ar">&#8594;</span><span class="nd">More T state</span><span class="ar">&#8594;</span><span class="nd">HbS polymerizes</span><span class="ar">&#8594;</span><span class="nd">Sickling</span></div>
+<div class="chain"><span class="nd">Low pH (Bohr effect)</span><span class="ar">&#8594;</span><span class="nd">H+ stabilizes T state</span><span class="ar">&#8594;</span><span class="nd">More sickling</span></div>
+<div class="chain"><span class="nd">High 2,3-BPG</span><span class="ar">&#8594;</span><span class="nd">Stabilizes T state</span><span class="ar">&#8594;</span><span class="nd">More sickling</span></div>
+<div class="chain"><span class="nd">High temperature</span><span class="ar">&#8594;</span><span class="nd">Shifts curve right</span><span class="ar">&#8594;</span><span class="nd">More O2 released</span><span class="ar">&#8594;</span><span class="nd">More T state</span></div>
+<div class="chain"><span class="nd">High CO2</span><span class="ar">&#8594;</span><span class="nd">Stabilizes T via carbamino formation</span><span class="ar">&#8594;</span><span class="nd">More sickling</span></div>
+<p>Every factor that shifts the O2-hemoglobin dissociation curve to the <strong>right</strong> (reduced O2 affinity, more O2 unloading) simultaneously promotes sickling. This is why sickle crises often occur during exercise (low pO2, low pH from lactic acid, high temperature, high CO2), at high altitude (low pO2), or during infections (fever raises temperature).</p>
 </div>
 
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Renal Physiology Through Sickle Cell</div>
-<p>The renal medulla is the perfect storm for sickling: low oxygen tension, high osmolality (the countercurrent multiplier concentrates solutes to 1200 mOsm/kg at the tip of the loop of Henle), and acidic pH. Sickled RBCs in the vasa recta damage the countercurrent exchange system. Without a functioning countercurrent multiplier, the kidney cannot create the medullary concentration gradient needed to produce concentrated urine. Patients develop <strong>isosthenuria</strong> (urine fixed at ~300 mOsm, same as plasma). This means they cannot conserve water when dehydrated, leading to a vicious cycle: dehydration concentrates hemoglobin, promoting more sickling, causing more medullary damage.</p>
-<p>If the MCAT gives you a passage about a patient who cannot concentrate urine and has a hemoglobin abnormality, this is the connection they are testing.</p>
+<div class="check" id="sc2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A sickle cell patient exercises vigorously. Which combination of physiological changes during exercise MOST promotes sickling?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc2',0,1,`Exercise causes decreased pO2 (muscles consuming oxygen), decreased pH (lactic acid from anaerobic metabolism), increased temperature (metabolic heat), and increased CO2 (from cellular respiration). ALL of these shift the O2-Hb curve RIGHT, promoting the T state, which is the state that allows HbS polymerization.`)"><span class="ck-ltr">A</span><span>Increased pO2 and increased pH</span></div>
+<div class="ck-opt" onclick="checkAns('sc2',1,1,`Exercise causes decreased pO2 (muscles consuming oxygen), decreased pH (lactic acid from anaerobic metabolism), increased temperature (metabolic heat), and increased CO2 (from cellular respiration). ALL of these shift the O2-Hb curve RIGHT, promoting the T state, which is the state that allows HbS polymerization.`)"><span class="ck-ltr">B</span><span>Decreased pO2, decreased pH, increased temperature, increased CO2</span></div>
+<div class="ck-opt" onclick="checkAns('sc2',2,1,`Exercise causes decreased pO2 (muscles consuming oxygen), decreased pH (lactic acid from anaerobic metabolism), increased temperature (metabolic heat), and increased CO2 (from cellular respiration). ALL of these shift the O2-Hb curve RIGHT, promoting the T state, which is the state that allows HbS polymerization.`)"><span class="ck-ltr">C</span><span>Increased 2,3-BPG only</span></div>
+<div class="ck-opt" onclick="checkAns('sc2',3,1,`Exercise causes decreased pO2 (muscles consuming oxygen), decreased pH (lactic acid from anaerobic metabolism), increased temperature (metabolic heat), and increased CO2 (from cellular respiration). ALL of these shift the O2-Hb curve RIGHT, promoting the T state, which is the state that allows HbS polymerization.`)"><span class="ck-ltr">D</span><span>Decreased temperature and increased pO2</span></div>
+</div>
+<div class="ck-fb" id="sc2-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Immune Function and the Spleen</div>
-<p>The spleen filters blood and is the primary site for clearing <strong>encapsulated bacteria</strong> (organisms with polysaccharide capsules that resist phagocytosis unless opsonized by antibodies). The spleen's marginal zone B cells produce IgM antibodies against polysaccharide antigens. In sickle cell disease, repeated splenic infarctions destroy the spleen by age 5 (functional asplenia). Without splenic filtration, patients are vulnerable to <strong>Streptococcus pneumoniae</strong>, <strong>Haemophilus influenzae</strong>, and <strong>Neisseria meningitidis</strong>. This is why sickle cell patients receive prophylactic penicillin and pneumococcal vaccines.</p>
-<p>This teaches you splenic function, innate vs adaptive immunity, opsonization, and the role of IgM, all through one disease.</p>
+<h3 class="sh">The Spleen: Why Sickle Cell Patients Get Infections</h3>
+<p class="p">The spleen is a blood-filtering organ with a unique vascular structure. Blood enters the spleen and passes through narrow sinusoidal slits that are just barely wide enough for a normal, flexible red blood cell to squeeze through. Rigid, sickled RBCs get stuck. In early childhood, sickle cells repeatedly clog and damage the splenic vasculature, causing small infarctions (areas of tissue death from lack of blood supply). By about age 5, the spleen is so scarred that it no longer functions. This is called <strong>functional asplenia</strong> (the spleen is physically present but non-functional), which eventually progresses to <strong>autosplenectomy</strong> (the spleen literally shrivels and fibroses).</p>
+<p class="p">Why does losing the spleen matter so much? The spleen has a unique immune role: it is the primary site for clearing <strong>encapsulated bacteria</strong> from the bloodstream. Encapsulated bacteria (like Streptococcus pneumoniae, Haemophilus influenzae, and Neisseria meningitidis) have a polysaccharide capsule that resists phagocytosis. The capsule is slippery; neutrophils and macrophages cannot grab onto it effectively. To kill encapsulated bacteria, the immune system must first coat them with antibodies and complement (a process called <strong>opsonization</strong>), and the <strong>marginal zone B cells</strong> of the spleen are the primary producers of the IgM antibodies that target polysaccharide capsule antigens.</p>
+<p class="p">Without a functioning spleen, these IgM-producing B cells are lost, opsonization of encapsulated bacteria is impaired, and the patient becomes vulnerable to <strong>overwhelming post-splenectomy infection (OPSI)</strong>. This is a medical emergency that can progress from mild fever to septic shock and death within hours. This is why sickle cell patients receive prophylactic penicillin starting in infancy and pneumococcal vaccines.</p>
+
+<div class="check" id="sc3">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A 6-year-old with sickle cell disease develops a high fever and rapidly worsening condition. Blood cultures grow Streptococcus pneumoniae. Why is this patient particularly vulnerable to this organism?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc3',0,1,`Functional asplenia from repeated splenic infarctions means the patient has lost marginal zone B cells that produce IgM against polysaccharide capsule antigens. Without opsonization, macrophages cannot effectively phagocytose encapsulated organisms like S. pneumoniae. This teaches splenic function, IgM, opsonization, and encapsulated bacteria all in one clinical scenario.`)"><span class="ck-ltr">A</span><span>Sickle cell causes neutropenia (low white blood cell count)</span></div>
+<div class="ck-opt" onclick="checkAns('sc3',1,1,`Functional asplenia from repeated splenic infarctions means the patient has lost marginal zone B cells that produce IgM against polysaccharide capsule antigens. Without opsonization, macrophages cannot effectively phagocytose encapsulated organisms like S. pneumoniae. This teaches splenic function, IgM, opsonization, and encapsulated bacteria all in one clinical scenario.`)"><span class="ck-ltr">B</span><span>Repeated splenic infarctions have destroyed the spleen, which normally clears encapsulated bacteria via IgM opsonization</span></div>
+<div class="ck-opt" onclick="checkAns('sc3',2,1,`Functional asplenia from repeated splenic infarctions means the patient has lost marginal zone B cells that produce IgM against polysaccharide capsule antigens. Without opsonization, macrophages cannot effectively phagocytose encapsulated organisms like S. pneumoniae. This teaches splenic function, IgM, opsonization, and encapsulated bacteria all in one clinical scenario.`)"><span class="ck-ltr">C</span><span>HbS cannot bind oxygen for immune cells to use in oxidative burst</span></div>
+<div class="ck-opt" onclick="checkAns('sc3',3,1,`Functional asplenia from repeated splenic infarctions means the patient has lost marginal zone B cells that produce IgM against polysaccharide capsule antigens. Without opsonization, macrophages cannot effectively phagocytose encapsulated organisms like S. pneumoniae. This teaches splenic function, IgM, opsonization, and encapsulated bacteria all in one clinical scenario.`)"><span class="ck-ltr">D</span><span>The patient lacks T cells due to thymic damage</span></div>
+</div>
+<div class="ck-fb" id="sc3-fb"></div>
 </div>
 
-<div class="box box-connect">
-<div class="label">MCAT Concept: Population Genetics and Natural Selection</div>
-<p>The sickle cell allele (HbS) persists at high frequency (up to 25% carrier rate) in sub-Saharan Africa and other malaria-endemic regions because of <strong>heterozygote advantage</strong> (also called balancing selection or overdominance). HbAS carriers have a survival advantage against <strong>Plasmodium falciparum</strong> malaria because the parasite cannot complete its life cycle as efficiently in cells containing HbS. HbAA individuals are fully susceptible to malaria; HbSS individuals have sickle cell disease. The heterozygote (HbAS) has the highest fitness in malaria-endemic environments.</p>
-<p>This is the textbook example of <strong>Hardy-Weinberg equilibrium modification by natural selection</strong>. If q = frequency of HbS allele, then q^2 = frequency of sickle cell disease, 2pq = carrier frequency, p^2 = frequency of normal homozygotes. The MCAT will give you allele frequencies and ask you to calculate carrier rates, or vice versa.</p>
+<h3 class="sh">The Kidney: Why Sickle Cell Patients Cannot Concentrate Urine</h3>
+<p class="p">The kidney's ability to concentrate urine depends on the <strong>countercurrent multiplier system</strong> in the loop of Henle and the <strong>countercurrent exchanger</strong> in the vasa recta. Here is how it works in a healthy kidney: The descending limb of the loop of Henle is permeable to water but not solutes. As the filtrate descends deeper into the medulla (where the interstitial fluid is increasingly hypertonic), water leaves the descending limb by osmosis, concentrating the filtrate. The ascending limb is impermeable to water but actively pumps out NaCl (via the Na+/K+/2Cl- cotransporter, which is the target of loop diuretics like furosemide). This NaCl accumulates in the medullary interstitium, creating the concentration gradient that drives water out of the descending limb. The result: the medullary interstitium reaches about 1200 mOsm/kg at the tip of the longest loops.</p>
+<p class="p">The <strong>vasa recta</strong> are the blood vessels that supply the renal medulla. They run parallel to the loop of Henle in a U-shaped pattern. As blood descends into the medulla, it loses water and gains solute (equilibrating with the hypertonic medulla). As it ascends, it gains water and loses solute. This countercurrent exchange prevents the blood flow from washing away the carefully built medullary gradient.</p>
+<p class="p">Now here is the sickle cell connection: the renal medulla is the <strong>perfect environment for sickling</strong>. It has low oxygen tension (the medulla receives only about 10% of renal blood flow and is relatively hypoxic), high osmolality (1200 mOsm/kg, which dehydrates RBCs and concentrates HbS), and acidic pH (H+ secretion in the collecting duct acidifies the surrounding interstitium). Sickled RBCs in the vasa recta block blood flow, causing microinfarctions of the medullary tissue. Over time, the countercurrent multiplier is destroyed. Without the medullary gradient, the kidney cannot concentrate urine above plasma osmolality (~300 mOsm/kg). This is called <strong>isosthenuria</strong>.</p>
+<p class="p">The practical consequence: sickle cell patients produce large volumes of dilute urine even when dehydrated. They cannot conserve water. Dehydration concentrates their blood, increases HbS concentration within RBCs, and promotes more sickling, creating a vicious cycle.</p>
+
+<div class="check" id="sc4">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Why does the renal medulla specifically promote sickling of red blood cells?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc4',0,1,`The medullary environment is a triple threat for sickling: low pO2 (promotes T state), high osmolality (dehydrates RBCs, increasing intracellular HbS concentration), and low pH (Bohr effect stabilizes T state). All three factors independently push hemoglobin toward the T state, which is the state in which HbS polymerizes.`)"><span class="ck-ltr">A</span><span>The medulla has high oxygen and low pH</span></div>
+<div class="ck-opt" onclick="checkAns('sc4',1,1,`The medullary environment is a triple threat for sickling: low pO2 (promotes T state), high osmolality (dehydrates RBCs, increasing intracellular HbS concentration), and low pH (Bohr effect stabilizes T state). All three factors independently push hemoglobin toward the T state, which is the state in which HbS polymerizes.`)"><span class="ck-ltr">B</span><span>The medulla has low oxygen, high osmolality, and low pH, all of which promote the T (deoxy) state of hemoglobin</span></div>
+<div class="ck-opt" onclick="checkAns('sc4',2,1,`The medullary environment is a triple threat for sickling: low pO2 (promotes T state), high osmolality (dehydrates RBCs, increasing intracellular HbS concentration), and low pH (Bohr effect stabilizes T state). All three factors independently push hemoglobin toward the T state, which is the state in which HbS polymerizes.`)"><span class="ck-ltr">C</span><span>The medulla is alkaline, which denatures HbS</span></div>
+<div class="ck-opt" onclick="checkAns('sc4',3,1,`The medullary environment is a triple threat for sickling: low pO2 (promotes T state), high osmolality (dehydrates RBCs, increasing intracellular HbS concentration), and low pH (Bohr effect stabilizes T state). All three factors independently push hemoglobin toward the T state, which is the state in which HbS polymerizes.`)"><span class="ck-ltr">D</span><span>The medulla has high blood flow that mechanically deforms RBCs</span></div>
+</div>
+<div class="ck-fb" id="sc4-fb"></div>
 </div>
 
-<div class="box box-trap">
-<div class="label">MCAT Trap: Sickle Cell Trait vs. Disease</div>
-<p>Sickle cell <strong>trait</strong> (HbAS, heterozygous) is generally asymptomatic under normal conditions. Carriers can experience sickling under extreme conditions (very high altitude, severe dehydration, extreme exercise). Sickle cell <strong>disease</strong> (HbSS, homozygous) produces the full clinical picture. The MCAT may describe a healthy athlete who develops symptoms only under extreme altitude and ask you to identify the genotype. The answer is HbAS (trait), not HbSS (disease).</p>
+<h3 class="sh">Population Genetics: Why the Allele Persists</h3>
+<p class="p">If sickle cell disease is so damaging, why has the HbS allele not been eliminated by natural selection? The answer is <strong>heterozygote advantage</strong> (also called <strong>balancing selection</strong> or <strong>overdominance</strong>). In regions where Plasmodium falciparum malaria is endemic, individuals with sickle cell trait (HbAS, heterozygous) have a survival advantage over both homozygotes. HbAA individuals are fully susceptible to malaria. HbSS individuals have sickle cell disease. HbAS individuals are partially protected from malaria because the parasite does not thrive as well in cells containing some HbS (sickling of infected RBCs leads to their premature removal by the spleen before the parasite can complete its lifecycle).</p>
+<p class="p">This means the heterozygote has the <strong>highest fitness</strong> in malaria-endemic environments. Natural selection maintains both alleles in the population: the A allele because AA is better than SS, and the S allele because AS is better than AA in the presence of malaria. The allele frequencies reach a stable equilibrium determined by the relative fitness costs of malaria vs. sickle cell disease.</p>
+<p class="p">This is directly tied to <strong>Hardy-Weinberg</strong>. If the frequency of the S allele is q, then: frequency of HbSS (disease) = q&#178;, frequency of HbAS (trait, carrier) = 2pq, and frequency of HbAA (normal) = p&#178;. If the MCAT tells you that 1 in 400 individuals in a population has sickle cell disease, you can calculate q: q&#178; = 1/400, so q = 1/20 = 0.05, p = 0.95, and the carrier frequency is 2(0.95)(0.05) = 0.095, or about 1 in 10.5.</p>
+
+<div class="check" id="sc5">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">In a population, 1 in 625 individuals has sickle cell disease. What is the carrier frequency?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc5',0,1,`q&#178; = 1/625, so q = 1/25 = 0.04. p = 1 - 0.04 = 0.96. Carrier frequency = 2pq = 2(0.96)(0.04) = 0.0768, or about 1 in 13. Hardy-Weinberg lets you convert between disease frequency and carrier frequency.`)"><span class="ck-ltr">A</span><span>1 in 25</span></div>
+<div class="ck-opt" onclick="checkAns('sc5',1,1,`q&#178; = 1/625, so q = 1/25 = 0.04. p = 1 - 0.04 = 0.96. Carrier frequency = 2pq = 2(0.96)(0.04) = 0.0768, or about 1 in 13. Hardy-Weinberg lets you convert between disease frequency and carrier frequency.`)"><span class="ck-ltr">B</span><span>Approximately 1 in 13</span></div>
+<div class="ck-opt" onclick="checkAns('sc5',2,1,`q&#178; = 1/625, so q = 1/25 = 0.04. p = 1 - 0.04 = 0.96. Carrier frequency = 2pq = 2(0.96)(0.04) = 0.0768, or about 1 in 13. Hardy-Weinberg lets you convert between disease frequency and carrier frequency.`)"><span class="ck-ltr">C</span><span>Approximately 1 in 50</span></div>
+<div class="ck-opt" onclick="checkAns('sc5',3,1,`q&#178; = 1/625, so q = 1/25 = 0.04. p = 1 - 0.04 = 0.96. Carrier frequency = 2pq = 2(0.96)(0.04) = 0.0768, or about 1 in 13. Hardy-Weinberg lets you convert between disease frequency and carrier frequency.`)"><span class="ck-ltr">D</span><span>1 in 625</span></div>
+</div>
+<div class="ck-fb" id="sc5-fb"></div>
 </div>
 
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Protein primary, tertiary, and quaternary structure. Hydrophobic interactions driving pathology. Hemoglobin cooperativity (T and R states, sigmoidal curve, Hill coefficient). Oxygen-hemoglobin dissociation curve shifts (Bohr effect, 2,3-BPG, temperature, CO2). Renal countercurrent multiplier and concentrating ability. Splenic function and encapsulated bacteria. IgM, opsonization, innate vs adaptive immunity. Hardy-Weinberg equilibrium, heterozygote advantage, natural selection. Autosomal recessive inheritance, carrier frequency calculations. Bilirubin metabolism and gallstone formation. Bone marrow expansion (extramedullary hematopoiesis).</p>
+<div class="mcat-ex" id="sc-mcat1">
+<div class="mx-head">MCAT-Style Example</div>
+<div class="mx-passage">A 22-year-old man with sickle cell disease presents with severe flank pain, dark urine, and a creatinine of 2.1 mg/dL (elevated). His urine osmolality is 305 mOsm/kg despite reporting no fluid intake for 12 hours. Physical exam reveals mild jaundice.</div>
+<div class="ck-q">The urine osmolality finding is best explained by:</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('sc-mcat1',0,1,`Despite 12 hours without fluid (which should trigger ADH release and concentrated urine, normally 800-1200 mOsm/kg), his urine is only 305 mOsm/kg (same as plasma). This is isosthenuria, caused by destruction of the medullary concentration gradient. Sickling in the vasa recta destroys the countercurrent exchange system, eliminating the medullary osmotic gradient needed to concentrate urine. The jaundice (elevated bilirubin from chronic hemolysis) and dark urine confirm the sickle cell context.`)"><span class="ck-ltr">A</span><span>Excess ADH secretion causing water retention in the collecting duct</span></div>
+<div class="ck-opt" onclick="checkAns('sc-mcat1',1,1,`Despite 12 hours without fluid (which should trigger ADH release and concentrated urine, normally 800-1200 mOsm/kg), his urine is only 305 mOsm/kg (same as plasma). This is isosthenuria, caused by destruction of the medullary concentration gradient. Sickling in the vasa recta destroys the countercurrent exchange system, eliminating the medullary osmotic gradient needed to concentrate urine. The jaundice (elevated bilirubin from chronic hemolysis) and dark urine confirm the sickle cell context.`)"><span class="ck-ltr">B</span><span>Destruction of the medullary countercurrent system by sickling in the vasa recta</span></div>
+<div class="ck-opt" onclick="checkAns('sc-mcat1',2,1,`Despite 12 hours without fluid (which should trigger ADH release and concentrated urine, normally 800-1200 mOsm/kg), his urine is only 305 mOsm/kg (same as plasma). This is isosthenuria, caused by destruction of the medullary concentration gradient. Sickling in the vasa recta destroys the countercurrent exchange system, eliminating the medullary osmotic gradient needed to concentrate urine. The jaundice (elevated bilirubin from chronic hemolysis) and dark urine confirm the sickle cell context.`)"><span class="ck-ltr">C</span><span>Proximal tubule damage preventing glucose reabsorption</span></div>
+<div class="ck-opt" onclick="checkAns('sc-mcat1',3,1,`Despite 12 hours without fluid (which should trigger ADH release and concentrated urine, normally 800-1200 mOsm/kg), his urine is only 305 mOsm/kg (same as plasma). This is isosthenuria, caused by destruction of the medullary concentration gradient. Sickling in the vasa recta destroys the countercurrent exchange system, eliminating the medullary osmotic gradient needed to concentrate urine. The jaundice (elevated bilirubin from chronic hemolysis) and dark urine confirm the sickle cell context.`)"><span class="ck-ltr">D</span><span>Increased GFR from afferent arteriole dilation</span></div>
 </div>
+<div class="ck-fb" id="sc-mcat1-fb"></div>
 </div>
 
+<div class="box box-story"><div class="lb">What You Learned From Sickle Cell Disease</div>
+<p>Amino acid properties (hydrophobic vs hydrophilic, charged vs uncharged at pH 7.4). Protein primary, tertiary, and quaternary structure. Hydrophobic interactions driving pathological aggregation. Hemoglobin structure (alpha2-beta2 tetramer, heme, Fe2+). Cooperative binding (T and R states, sigmoidal curve vs hyperbolic). Hill coefficient. O2-Hb dissociation curve and every factor that shifts it (pH, CO2, 2,3-BPG, temperature). Bohr effect. Renal countercurrent multiplier and concentrating mechanism. Vasa recta and countercurrent exchange. Isosthenuria. Splenic function and blood filtration. Encapsulated bacteria and opsonization. IgM and marginal zone B cells. Bilirubin metabolism (hemolysis, indirect bilirubin, jaundice, pigment gallstones). Hardy-Weinberg equilibrium and carrier frequency calculations. Heterozygote advantage and balancing selection. Founder effect. Point mutation types (missense).</p>
+</div>
+</div>
 
 <div class="section" id="sec-cf">
-<div class="disease-header">
-<h2>Cystic Fibrosis</h2>
-<div class="subtitle">The most common lethal autosomal recessive disease in Caucasians teaches you membrane biology</div>
-<span class="genetics-badge" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Membrane Transport</span><span class="ct ct-blue">Protein Folding/Processing</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Respiratory Physiology</span><span class="ct ct-purple">Pancreatic Function</span><span class="ct ct-teal">Reproductive Biology</span>
-</div>
+<div class="dh"><h2>Cystic Fibrosis</h2>
+<div class="st">A misfolded chloride channel that teaches you membrane biology, the secretory pathway, and GPCR signaling</div>
+<span class="gb" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span>
+<div class="ct-row"><span class="ct ct-red">Membrane Transport</span><span class="ct ct-blue">Protein Processing</span><span class="ct ct-green">GPCR/cAMP Signaling</span><span class="ct ct-amber">Respiratory</span><span class="ct ct-purple">Pancreatic</span><span class="ct ct-teal">Vitamins</span></div>
 </div>
 
-<div class="prose">
-<p>Cystic fibrosis is caused by mutations in the <strong>CFTR gene</strong> (cystic fibrosis transmembrane conductance regulator), which encodes a chloride channel on the apical membrane of epithelial cells. The most common mutation, <strong>delta-F508</strong>, is a deletion of phenylalanine at position 508. This does not destroy the protein's function directly. Instead, it causes the protein to <strong>misfold</strong>. The endoplasmic reticulum's quality control system (chaperones like calnexin and calreticulin) detects the misfolded protein, tags it with ubiquitin, and sends it to the proteasome for degradation. The channel never reaches the cell membrane.</p>
+<h3 class="sh">The Protein: CFTR Is a Chloride Channel</h3>
+<p class="p">CFTR stands for cystic fibrosis transmembrane conductance regulator. Despite the name suggesting it "regulates" something, CFTR is itself a <strong>chloride channel</strong>. It sits in the apical (outward-facing) membrane of epithelial cells lining the airways, intestines, pancreatic ducts, sweat glands, and reproductive tract. When open, it allows chloride ions (Cl-) to flow out of the cell and into the lumen.</p>
+<p class="p">An important distinction: CFTR is a <strong>channel</strong>, not a pump. Channels allow ions to flow passively down their electrochemical gradient. Pumps use energy (usually ATP) to move ions against their gradient. However, CFTR is unusual because it requires <strong>ATP binding and hydrolysis to gate (open) the channel</strong>. Specifically, protein kinase A (PKA) phosphorylates CFTR's regulatory domain, and then ATP binding to the nucleotide-binding domains opens the pore. So ATP is used for gating, not for transport. The actual chloride movement is passive.</p>
+<p class="p">Why does chloride secretion matter? Wherever chloride goes, <strong>sodium follows</strong> (driven by the electrical gradient created by Cl- movement), and <strong>water follows sodium</strong> (by osmosis). So CFTR-mediated chloride secretion is really the master switch for fluid secretion. When CFTR is absent, chloride stays inside the cell, sodium and water stay with it, and the secretions on the epithelial surface become thick and dehydrated.</p>
+
+<div class="check" id="cf1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">CFTR requires ATP to open. Does this make it a pump or a channel?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('cf1',0,1,`This is an important distinction. CFTR is a channel. ATP is used to open the gate (conformational change), but once open, Cl- flows down its electrochemical gradient passively. A pump (like the Na+/K+-ATPase) uses ATP energy to move ions against their gradient. CFTR does not move Cl- against its gradient.`)"><span class="ck-ltr">A</span><span>A pump, because it uses ATP</span></div>
+<div class="ck-opt" onclick="checkAns('cf1',1,1,`This is an important distinction. CFTR is a channel. ATP is used to open the gate (conformational change), but once open, Cl- flows down its electrochemical gradient passively. A pump (like the Na+/K+-ATPase) uses ATP energy to move ions against their gradient. CFTR does not move Cl- against its gradient.`)"><span class="ck-ltr">B</span><span>A channel, because chloride moves passively once the gate opens; ATP is used for gating, not for transport</span></div>
+<div class="ck-opt" onclick="checkAns('cf1',2,1,`This is an important distinction. CFTR is a channel. ATP is used to open the gate (conformational change), but once open, Cl- flows down its electrochemical gradient passively. A pump (like the Na+/K+-ATPase) uses ATP energy to move ions against their gradient. CFTR does not move Cl- against its gradient.`)"><span class="ck-ltr">C</span><span>Neither; it is an enzyme</span></div>
+<div class="ck-opt" onclick="checkAns('cf1',3,1,`This is an important distinction. CFTR is a channel. ATP is used to open the gate (conformational change), but once open, Cl- flows down its electrochemical gradient passively. A pump (like the Na+/K+-ATPase) uses ATP energy to move ions against their gradient. CFTR does not move Cl- against its gradient.`)"><span class="ck-ltr">D</span><span>A pump for some ions and a channel for others</span></div>
+</div>
+<div class="ck-fb" id="cf1-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Protein Processing and the ER Quality Control</div>
-<p>This disease teaches the entire secretory pathway. Normally, CFTR is synthesized on ribosomes bound to the rough ER, threaded into the ER membrane co-translationally via the signal recognition particle (SRP), folded with the help of ER chaperones, glycosylated in the ER and Golgi, and trafficked to the plasma membrane via vesicles. The delta-F508 mutation disrupts folding in the ER, triggering <strong>ER-associated degradation (ERAD)</strong>: misfolded proteins are retrotranslocated to the cytoplasm, polyubiquitinated, and degraded by the 26S proteasome. Understanding CF means understanding the ER, Golgi, vesicular transport, protein quality control, ubiquitin-proteasome pathway, and membrane protein insertion.</p>
+<h3 class="sh">The Mutation: Why Delta-F508 Never Reaches the Membrane</h3>
+<p class="p">The most common CF mutation is <strong>delta-F508</strong>: a deletion of phenylalanine at position 508. This does not completely destroy CFTR function. If you could somehow force the mutant protein to reach the cell surface, it would actually function as a chloride channel (though with reduced open probability). The problem is that the deletion causes the protein to <strong>misfold during synthesis in the endoplasmic reticulum</strong>.</p>
+<p class="p">Here is what normally happens: CFTR is synthesized by ribosomes on the <strong>rough ER</strong>. As the polypeptide emerges, it is threaded into the ER membrane (CFTR is a multi-pass transmembrane protein). ER-resident <strong>chaperone proteins</strong> (like calnexin, calreticulin, and Hsp70) assist folding and check quality. Properly folded CFTR is packaged into transport vesicles and sent to the <strong>Golgi apparatus</strong>, where it is further glycosylated (sugar modifications). From the trans-Golgi, it is shipped to the plasma membrane via secretory vesicles.</p>
+<p class="p">The delta-F508 protein does not fold correctly. The ER quality control system detects this and targets it for <strong>ER-associated degradation (ERAD)</strong>: the misfolded protein is retrotranslocated out of the ER back into the cytoplasm, tagged with <strong>ubiquitin</strong> (a small protein attached by E1, E2, and E3 ubiquitin ligases), and degraded by the <strong>26S proteasome</strong>. The channel never reaches the cell surface.</p>
+
+<div class="box box-yield"><div class="lb">Why This Teaches the Entire Secretory Pathway</div>
+<p>Understanding CF means understanding: rough ER and co-translational insertion via SRP (signal recognition particle), ER chaperones and protein quality control, vesicular transport from ER to Golgi (COPII-coated vesicles), glycosylation in ER (core glycosylation) and Golgi (terminal glycosylation), ERAD and retrotranslocation, the ubiquitin-proteasome degradation pathway (E1/E2/E3 enzymes, K48-linked polyubiquitin as a degradation signal), and the final exocytic pathway from trans-Golgi to plasma membrane. All from one mutation in one protein.</p>
 </div>
 
-<div class="box box-chain">
-<div class="label">The Domino Chain: No Chloride Channel, Thick Mucus Everywhere</div>
-<p>CFTR is a chloride <strong>channel</strong> (not a pump; it uses the electrochemical gradient, not ATP hydrolysis, to move Cl- ions, though ATP is used to gate the channel open). When CFTR is absent from the apical membrane, chloride cannot be secreted into the lumen. Water normally follows chloride osmotically to hydrate secretions. Without chloride (and therefore water) secretion, secretions become thick and viscous.</p>
-<div class="chain">
-<span class="node">CFTR absent from membrane</span><span class="arrow">&#8594;</span>
-<span class="node">No Cl- secretion</span><span class="arrow">&#8594;</span>
-<span class="node">No water follows</span><span class="arrow">&#8594;</span>
-<span class="node">Thick, dehydrated secretions</span>
+<div class="check" id="cf2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">In cystic fibrosis (delta-F508), the CFTR protein is degraded before reaching the cell surface. Where does this degradation primarily occur?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('cf2',0,2,`ERAD (ER-associated degradation): ER chaperones detect misfolding, the protein is retrotranslocated to the cytoplasm, tagged with polyubiquitin (K48-linked), and degraded by the 26S proteasome. This is the proteasomal pathway, not the lysosomal pathway. Lysosomes degrade extracellular material brought in by endocytosis and old organelles via autophagy.`)"><span class="ck-ltr">A</span><span>In the lysosome, after the protein reaches the cell surface and is endocytosed</span></div>
+<div class="ck-opt" onclick="checkAns('cf2',1,2,`ERAD (ER-associated degradation): ER chaperones detect misfolding, the protein is retrotranslocated to the cytoplasm, tagged with polyubiquitin (K48-linked), and degraded by the 26S proteasome. This is the proteasomal pathway, not the lysosomal pathway. Lysosomes degrade extracellular material brought in by endocytosis and old organelles via autophagy.`)"><span class="ck-ltr">B</span><span>In the Golgi apparatus, where glycosylation detects the misfolding</span></div>
+<div class="ck-opt" onclick="checkAns('cf2',2,2,`ERAD (ER-associated degradation): ER chaperones detect misfolding, the protein is retrotranslocated to the cytoplasm, tagged with polyubiquitin (K48-linked), and degraded by the 26S proteasome. This is the proteasomal pathway, not the lysosomal pathway. Lysosomes degrade extracellular material brought in by endocytosis and old organelles via autophagy.`)"><span class="ck-ltr">C</span><span>In the cytoplasm, after retrotranslocation from the ER and ubiquitination, by the 26S proteasome</span></div>
+<div class="ck-opt" onclick="checkAns('cf2',3,2,`ERAD (ER-associated degradation): ER chaperones detect misfolding, the protein is retrotranslocated to the cytoplasm, tagged with polyubiquitin (K48-linked), and degraded by the 26S proteasome. This is the proteasomal pathway, not the lysosomal pathway. Lysosomes degrade extracellular material brought in by endocytosis and old organelles via autophagy.`)"><span class="ck-ltr">D</span><span>In the nucleus, where the mRNA is degraded</span></div>
 </div>
-<p>This single mechanism produces disease in every organ with secretory epithelium:</p>
-<div class="chain"><span class="node">Lungs</span><span class="arrow">&#8594;</span><span class="node">Thick mucus traps bacteria</span><span class="arrow">&#8594;</span><span class="node">Chronic infections (Pseudomonas, S. aureus)</span><span class="arrow">&#8594;</span><span class="node">Bronchiectasis, respiratory failure</span></div>
-<div class="chain"><span class="node">Pancreas</span><span class="arrow">&#8594;</span><span class="node">Ducts clog with thick secretions</span><span class="arrow">&#8594;</span><span class="node">Enzymes cannot reach duodenum</span><span class="arrow">&#8594;</span><span class="node">Malabsorption (fat-soluble vitamins A, D, E, K)</span></div>
-<div class="chain"><span class="node">Sweat glands</span><span class="arrow">&#8594;</span><span class="node">CFTR normally reabsorbs Cl- from sweat</span><span class="arrow">&#8594;</span><span class="node">Without CFTR, sweat is abnormally salty</span><span class="arrow">&#8594;</span><span class="node">Basis of the sweat chloride test</span></div>
-<div class="chain"><span class="node">Vas deferens</span><span class="arrow">&#8594;</span><span class="node">Absent or atretic</span><span class="arrow">&#8594;</span><span class="node">Male infertility (98% of CF males)</span></div>
+<div class="ck-fb" id="cf2-fb"></div>
 </div>
 
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Cholera Toxin and CFTR</div>
-<p>Cholera toxin ADP-ribosylates the Gs alpha subunit, permanently activating adenylyl cyclase. cAMP rises, activating PKA, which phosphorylates and <strong>opens CFTR chloride channels</strong>. Massive Cl- secretion into the intestinal lumen drags water out, causing secretory diarrhea. This is the exact opposite of CF: cholera is <strong>too much CFTR activity</strong>, CF is <strong>no CFTR activity</strong>. The MCAT loves connecting these two. There is even a hypothesis that CF carriers (heterozygotes) have partial CFTR function that protects against cholera-induced fluid loss, explaining heterozygote advantage similar to sickle cell and malaria.</p>
+<h3 class="sh">The Organs: One Mechanism, Many Systems</h3>
+<p class="p"><strong>Lungs:</strong> Without CFTR, the airway surface liquid (the thin layer of fluid on top of the airway epithelium) becomes dehydrated and viscous. Normally, cilia beat in a coordinated wave to sweep mucus and trapped particles up and out of the lungs (the <strong>mucociliary escalator</strong>). In CF, the mucus is too thick for the cilia to move effectively. Bacteria (especially <strong>Pseudomonas aeruginosa</strong> and Staphylococcus aureus) become trapped in the stagnant mucus and establish chronic infections. The immune system responds with massive neutrophil infiltration, and the neutrophil-released enzymes (elastase, proteases) and DNA (from dead neutrophils) actually make the mucus even thicker. Over years, the chronic inflammation damages the airway walls, causing permanent dilation of the bronchi called <strong>bronchiectasis</strong>. Respiratory failure is the primary cause of death in CF.</p>
+
+<p class="p"><strong>Pancreas:</strong> The pancreatic ducts are lined with CFTR-expressing epithelial cells that normally secrete chloride and bicarbonate (CFTR also conducts bicarbonate) to create a watery, alkaline fluid that carries digestive enzymes from the acinar cells into the duodenum. Without CFTR, these secretions are thick, and the ducts become plugged. Enzymes (lipase, amylase, trypsin) cannot reach the small intestine. The enzymes back up and can actually digest the pancreas itself (autodigestion), leading to fibrosis and scarring over time. The result is <strong>pancreatic insufficiency</strong>: patients cannot properly digest food, particularly fats.</p>
+
+<p class="p"><strong>Fat malabsorption</strong> has cascading consequences. Without pancreatic lipase in the duodenum, dietary triglycerides are not broken down into fatty acids and monoglycerides, so they cannot be absorbed. Fat-soluble vitamins (A, D, E, K) are dissolved in dietary fat, so they are lost too. Each deficiency has specific consequences: <strong>Vitamin A</strong> deficiency causes night blindness (retinal is derived from vitamin A and is required for rhodopsin in rod cells). <strong>Vitamin D</strong> deficiency impairs calcium absorption from the gut, leading to rickets in children or osteomalacia in adults. <strong>Vitamin E</strong> is an antioxidant that protects cell membranes from lipid peroxidation; deficiency causes neurological problems and hemolytic anemia. <strong>Vitamin K</strong> is required for gamma-carboxylation of glutamic acid residues on clotting factors II, VII, IX, and X; deficiency causes prolonged bleeding.</p>
+
+<div class="check" id="cf3">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A CF patient develops easy bruising and prolonged bleeding after minor cuts. Which vitamin deficiency is most directly responsible?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('cf3',0,3,`Vitamin K is required for gamma-carboxylation of clotting factors II, VII, IX, and X (remember: "1972" or factors 2, 7, 9, 10). Without vitamin K, these factors cannot bind calcium and cannot participate in the coagulation cascade. CF causes fat malabsorption, which prevents absorption of all fat-soluble vitamins (A, D, E, K).`)"><span class="ck-ltr">A</span><span>Vitamin A</span></div>
+<div class="ck-opt" onclick="checkAns('cf3',1,3,`Vitamin K is required for gamma-carboxylation of clotting factors II, VII, IX, and X (remember: "1972" or factors 2, 7, 9, 10). Without vitamin K, these factors cannot bind calcium and cannot participate in the coagulation cascade. CF causes fat malabsorption, which prevents absorption of all fat-soluble vitamins (A, D, E, K).`)"><span class="ck-ltr">B</span><span>Vitamin D</span></div>
+<div class="ck-opt" onclick="checkAns('cf3',2,3,`Vitamin K is required for gamma-carboxylation of clotting factors II, VII, IX, and X (remember: "1972" or factors 2, 7, 9, 10). Without vitamin K, these factors cannot bind calcium and cannot participate in the coagulation cascade. CF causes fat malabsorption, which prevents absorption of all fat-soluble vitamins (A, D, E, K).`)"><span class="ck-ltr">C</span><span>Vitamin E</span></div>
+<div class="ck-opt" onclick="checkAns('cf3',3,3,`Vitamin K is required for gamma-carboxylation of clotting factors II, VII, IX, and X (remember: "1972" or factors 2, 7, 9, 10). Without vitamin K, these factors cannot bind calcium and cannot participate in the coagulation cascade. CF causes fat malabsorption, which prevents absorption of all fat-soluble vitamins (A, D, E, K).`)"><span class="ck-ltr">D</span><span>Vitamin K</span></div>
+</div>
+<div class="ck-fb" id="cf3-fb"></div>
 </div>
 
-<div class="box box-connect">
-<div class="label">MCAT Concept: Fat-Soluble Vitamin Deficiency</div>
-<p>Pancreatic insufficiency in CF means lipase cannot reach the small intestine. Without lipase, dietary fats are not digested into fatty acids and monoglycerides, so they cannot be absorbed. Fat-soluble vitamins (A, D, E, K) require fat absorption for their own uptake. Deficiency of each produces distinct pathology: Vitamin A (night blindness), Vitamin D (rickets/osteomalacia), Vitamin E (neurological problems, hemolytic anemia), Vitamin K (bleeding, because clotting factors II, VII, IX, X require vitamin K for gamma-carboxylation of glutamic acid residues). One disease, one mechanism (malabsorption), four separate vitamin deficiency syndromes.</p>
+<p class="p"><strong>Sweat glands:</strong> This is where the diagnostic test comes from. In normal sweat glands, the secretory coil produces a salty fluid (isotonic with plasma). As the sweat travels up the duct toward the skin surface, CFTR and ENaC (epithelial sodium channel) <strong>reabsorb</strong> NaCl from the sweat, making it hypotonic (less salty) by the time it reaches the surface. In CF, CFTR does not function in the duct, so NaCl is not reabsorbed, and the sweat remains salty. The <strong>sweat chloride test</strong> (chloride concentration >60 mEq/L is diagnostic) is the gold standard for CF diagnosis. Notice that in the sweat gland, CFTR's role is <strong>absorption</strong>, while in the lungs and pancreas its role is <strong>secretion</strong>. The direction depends on the electrochemical gradient in each tissue.</p>
+
+<p class="p"><strong>Reproductive tract:</strong> Approximately 98% of males with CF are infertile due to <strong>congenital bilateral absence of the vas deferens (CBAVD)</strong>. The vas deferens is the duct that carries sperm from the epididymis to the ejaculatory duct. In CF, thick secretions in the developing vas deferens cause it to degenerate before birth. Sperm are produced normally in the testes but have no way to reach the ejaculate. Some men with CBAVD as their only symptom are found to carry CF mutations, making this an important clinical connection.</p>
+
+<h3 class="sh">The Cholera Connection: CFTR at the Center of GPCR Signaling</h3>
+<p class="p">This is one of the most beautiful connections in all of biology for the MCAT. <strong>Cholera toxin</strong> is produced by Vibrio cholerae bacteria in the small intestine. The toxin enters intestinal epithelial cells and ADP-ribosylates the <strong>Gs alpha subunit</strong> of a G-protein coupled receptor (GPCR). Normally, Gs alpha activates adenylyl cyclase briefly, then hydrolyzes its GTP to GDP and turns itself off. Cholera toxin prevents this GTP hydrolysis, locking Gs alpha in the permanently active state. Adenylyl cyclase runs continuously, converting ATP to cAMP without stopping. cAMP activates <strong>protein kinase A (PKA)</strong>, which phosphorylates and opens <strong>CFTR chloride channels</strong>. Massive chloride secretion into the intestinal lumen drags sodium and water out, producing the profuse, watery ("rice water") diarrhea that can kill through dehydration in hours.</p>
+<p class="p">This is the <strong>exact opposite</strong> of CF: cholera is too much CFTR activity, CF is no CFTR activity. There is even a hypothesis that CF carriers (heterozygous, one functional CFTR copy) have reduced CFTR activity that makes them partially resistant to cholera-induced fluid loss, providing a <strong>heterozygote advantage</strong> similar to sickle cell trait and malaria.</p>
+
+<div class="check" id="cf4">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Cholera toxin causes massive watery diarrhea by permanently activating which component of the GPCR signaling pathway?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('cf4',0,1,`Cholera toxin ADP-ribosylates the Gs alpha subunit, preventing GTP hydrolysis. Gs alpha stays GTP-bound (active), continuously stimulating adenylyl cyclase to produce cAMP. cAMP activates PKA, which phosphorylates and opens CFTR channels. This is the entire Gs signaling cascade from receptor to effector, and the MCAT expects you to trace every step.`)"><span class="ck-ltr">A</span><span>The GPCR receptor itself</span></div>
+<div class="ck-opt" onclick="checkAns('cf4',1,1,`Cholera toxin ADP-ribosylates the Gs alpha subunit, preventing GTP hydrolysis. Gs alpha stays GTP-bound (active), continuously stimulating adenylyl cyclase to produce cAMP. cAMP activates PKA, which phosphorylates and opens CFTR channels. This is the entire Gs signaling cascade from receptor to effector, and the MCAT expects you to trace every step.`)"><span class="ck-ltr">B</span><span>Gs alpha subunit (locked in GTP-bound active state)</span></div>
+<div class="ck-opt" onclick="checkAns('cf4',2,1,`Cholera toxin ADP-ribosylates the Gs alpha subunit, preventing GTP hydrolysis. Gs alpha stays GTP-bound (active), continuously stimulating adenylyl cyclase to produce cAMP. cAMP activates PKA, which phosphorylates and opens CFTR channels. This is the entire Gs signaling cascade from receptor to effector, and the MCAT expects you to trace every step.`)"><span class="ck-ltr">C</span><span>Protein kinase C (PKC)</span></div>
+<div class="ck-opt" onclick="checkAns('cf4',3,1,`Cholera toxin ADP-ribosylates the Gs alpha subunit, preventing GTP hydrolysis. Gs alpha stays GTP-bound (active), continuously stimulating adenylyl cyclase to produce cAMP. cAMP activates PKA, which phosphorylates and opens CFTR channels. This is the entire Gs signaling cascade from receptor to effector, and the MCAT expects you to trace every step.`)"><span class="ck-ltr">D</span><span>The CFTR gene promoter</span></div>
+</div>
+<div class="ck-fb" id="cf4-fb"></div>
 </div>
 
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>CFTR as a chloride channel (not a pump). Ion channel gating by ATP. Osmotic movement of water following solute. The entire secretory pathway (ER, Golgi, vesicles, membrane insertion). Protein misfolding and ER-associated degradation. Ubiquitin-proteasome pathway. GPCR signaling (cholera toxin, Gs, cAMP, PKA). Respiratory physiology (mucociliary clearance). Pancreatic exocrine function. Fat-soluble vitamin absorption and deficiency syndromes. Sweat gland physiology. Reproductive anatomy (vas deferens). Carrier frequency and heterozygote advantage. Autosomal recessive inheritance patterns.</p>
+<div class="mcat-ex" id="cf-mcat1">
+<div class="mx-head">MCAT-Style Example</div>
+<div class="mx-passage">A researcher discovers a new drug that can partially correct the folding defect of the delta-F508 CFTR protein, allowing approximately 30% of the protein to escape ER quality control and reach the cell surface.</div>
+<div class="ck-q">This drug would most likely improve symptoms in which organ system FIRST?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('cf-mcat1',0,1,`The sweat chloride test would show improvement first because it directly measures CFTR-mediated chloride reabsorption in the sweat duct. If 30% of CFTR reaches the surface, sweat chloride would decrease. Lung improvement would follow with restored mucociliary clearance, but structural changes like bronchiectasis are irreversible. The vas deferens is absent (degenerated before birth), so postnatal treatment would not restore it. This question tests understanding of which symptoms are reversible vs permanent, and which directly reflect CFTR channel function.`)"><span class="ck-ltr">A</span><span>Lungs, because respiratory symptoms are the most life-threatening</span></div>
+<div class="ck-opt" onclick="checkAns('cf-mcat1',1,1,`The sweat chloride test would show improvement first because it directly measures CFTR-mediated chloride reabsorption in the sweat duct. If 30% of CFTR reaches the surface, sweat chloride would decrease. Lung improvement would follow with restored mucociliary clearance, but structural changes like bronchiectasis are irreversible. The vas deferens is absent (degenerated before birth), so postnatal treatment would not restore it. This question tests understanding of which symptoms are reversible vs permanent, and which directly reflect CFTR channel function.`)"><span class="ck-ltr">B</span><span>Sweat glands, because improved CFTR function would reduce sweat chloride concentration</span></div>
+<div class="ck-opt" onclick="checkAns('cf-mcat1',2,1,`The sweat chloride test would show improvement first because it directly measures CFTR-mediated chloride reabsorption in the sweat duct. If 30% of CFTR reaches the surface, sweat chloride would decrease. Lung improvement would follow with restored mucociliary clearance, but structural changes like bronchiectasis are irreversible. The vas deferens is absent (degenerated before birth), so postnatal treatment would not restore it. This question tests understanding of which symptoms are reversible vs permanent, and which directly reflect CFTR channel function.`)"><span class="ck-ltr">C</span><span>Vas deferens, because the structural defect would be reversed</span></div>
+<div class="ck-opt" onclick="checkAns('cf-mcat1',3,1,`The sweat chloride test would show improvement first because it directly measures CFTR-mediated chloride reabsorption in the sweat duct. If 30% of CFTR reaches the surface, sweat chloride would decrease. Lung improvement would follow with restored mucociliary clearance, but structural changes like bronchiectasis are irreversible. The vas deferens is absent (degenerated before birth), so postnatal treatment would not restore it. This question tests understanding of which symptoms are reversible vs permanent, and which directly reflect CFTR channel function.`)"><span class="ck-ltr">D</span><span>Pancreas, because enzyme secretion would immediately normalize</span></div>
 </div>
+<div class="ck-fb" id="cf-mcat1-fb"></div>
 </div>
 
+<div class="box box-story"><div class="lb">What You Learned From Cystic Fibrosis</div>
+<p>Ion channels vs pumps (CFTR is a channel gated by ATP, not an ATP-driven pump). Osmotic water movement following solute. The entire secretory pathway: rough ER, SRP, co-translational insertion, ER chaperones, COPII vesicles, Golgi glycosylation, exocytosis. ERAD and the ubiquitin-proteasome system (E1/E2/E3, K48-linked polyUb). GPCR signaling: Gs alpha, adenylyl cyclase, cAMP, PKA (and the cholera toxin connection). Mucociliary clearance and respiratory defense. Pancreatic exocrine function. Fat-soluble vitamin absorption and individual deficiency syndromes (A: night blindness, D: rickets, E: neuro/hemolysis, K: bleeding/clotting factors 2,7,9,10). Sweat gland physiology. Reproductive anatomy (vas deferens). Autosomal recessive inheritance. Heterozygote advantage hypothesis.</p>
+</div>
+</div>
 
 <div class="section" id="sec-huntington">
-<div class="disease-header">
-<h2>Huntington Disease</h2>
-<div class="subtitle">The cruelty of autosomal dominant inheritance and the concept of anticipation</div>
-<span class="genetics-badge" style="background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)">Autosomal Dominant</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Trinucleotide Repeats</span><span class="ct ct-blue">AD Inheritance</span><span class="ct ct-green">Neurotransmission</span><span class="ct ct-amber">Anticipation</span><span class="ct ct-purple">Protein Aggregation</span><span class="ct ct-teal">Basal Ganglia</span>
+<div class="dh"><h2>Huntington Disease</h2><div class="st">Trinucleotide repeats, anticipation, and the basal ganglia</div>
+<span class="gb" style="background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)">Autosomal Dominant</span>
+<div class="ct-row"><span class="ct ct-red">Trinucleotide Repeats</span><span class="ct ct-blue">AD Inheritance</span><span class="ct ct-green">GABA</span><span class="ct ct-amber">Basal Ganglia</span><span class="ct ct-purple">Anticipation</span></div></div>
+
+<h3 class="sh">The Mutation: CAG Repeats and Toxic Protein</h3>
+<p class="p">The huntingtin gene on chromosome 4 contains a stretch of CAG repeats. In normal individuals, this stretch is 10-35 repeats long. In Huntington disease, it expands to 36 or more (full penetrance at 40+). Since CAG codes for <strong>glutamine</strong>, the mutant huntingtin protein contains a long polyglutamine (polyQ) tract. This polyQ stretch causes the protein to misfold and form <strong>intranuclear aggregates</strong> (clumps of misfolded protein inside the nucleus) that are toxic to neurons. The mechanism of toxicity involves disrupting normal transcription, interfering with protein quality control systems (the proteasome becomes overwhelmed), and triggering apoptosis.</p>
+<p class="p">The neurons most vulnerable are the <strong>GABAergic medium spiny neurons</strong> of the caudate nucleus and putamen (together called the striatum). Why these neurons are selectively vulnerable despite huntingtin being expressed in all cells remains an active area of research, but it likely relates to their high metabolic demands and sensitivity to excitotoxicity (excessive glutamate stimulation).</p>
+
+<div class="check" id="hd1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Huntington disease is caused by expansion of a CAG repeat. What amino acid does CAG code for, and what happens to the mutant protein?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('hd1',0,1,`CAG = glutamine. The expanded polyglutamine tract causes misfolding and intranuclear aggregation. This is a toxic gain-of-function: the mutant protein does something harmful that the normal protein does not do. Compare this to sickle cell (also gain-of-function: HbS polymerizes, which HbA does not).`)"><span class="ck-ltr">A</span><span>Proline; the protein becomes rigid and cannot function</span></div>
+<div class="ck-opt" onclick="checkAns('hd1',1,1,`CAG = glutamine. The expanded polyglutamine tract causes misfolding and intranuclear aggregation. This is a toxic gain-of-function: the mutant protein does something harmful that the normal protein does not do. Compare this to sickle cell (also gain-of-function: HbS polymerizes, which HbA does not).`)"><span class="ck-ltr">B</span><span>Glutamine; the polyglutamine tract causes the protein to misfold and aggregate in the nucleus</span></div>
+<div class="ck-opt" onclick="checkAns('hd1',2,1,`CAG = glutamine. The expanded polyglutamine tract causes misfolding and intranuclear aggregation. This is a toxic gain-of-function: the mutant protein does something harmful that the normal protein does not do. Compare this to sickle cell (also gain-of-function: HbS polymerizes, which HbA does not).`)"><span class="ck-ltr">C</span><span>Alanine; the protein is too small to function</span></div>
+<div class="ck-opt" onclick="checkAns('hd1',3,1,`CAG = glutamine. The expanded polyglutamine tract causes misfolding and intranuclear aggregation. This is a toxic gain-of-function: the mutant protein does something harmful that the normal protein does not do. Compare this to sickle cell (also gain-of-function: HbS polymerizes, which HbA does not).`)"><span class="ck-ltr">D</span><span>Glutamic acid; the protein becomes negatively charged and dissolves</span></div>
 </div>
+<div class="ck-fb" id="hd1-fb"></div>
 </div>
 
-<div class="prose">
-<p>Huntington disease is caused by an expansion of the <strong>CAG trinucleotide repeat</strong> in the huntingtin gene on chromosome 4. CAG codes for glutamine, so the mutant protein contains a long polyglutamine (polyQ) tract. Normal individuals have 10-35 repeats. Disease occurs at 36+ repeats, with full penetrance above 40. The expanded polyQ tract causes the protein to misfold and aggregate into intranuclear inclusions that are toxic to neurons, particularly in the <strong>caudate nucleus</strong> of the basal ganglia.</p>
+<h3 class="sh">Anticipation: Getting Worse Each Generation</h3>
+<p class="p">Trinucleotide repeats are unstable during DNA replication. During replication of the repeat region, the two DNA strands can slip relative to each other (a process called <strong>replication slippage</strong>). If the newly synthesized strand slips forward and re-anneals out of register, the new strand will have extra repeats. This is more likely during <strong>spermatogenesis</strong> than oogenesis because spermatogenesis involves many more rounds of mitotic cell division (spermatogonia divide continuously throughout a man's life, while oogenesis involves far fewer divisions).</p>
+<p class="p">The consequence: a father with 42 repeats may pass on 50+ repeats to his child. More repeats means more toxic polyQ protein, which means <strong>earlier onset and more severe disease</strong>. This generational worsening is called <strong>anticipation</strong>. A grandmother might develop symptoms at age 55, her son at age 40, and her grandson at age 25. If the MCAT shows a pedigree where each generation is diagnosed younger than the last, the answer is anticipation from trinucleotide repeat expansion.</p>
+
+<div class="check" id="hd2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A family shows Huntington disease appearing at age 50 in the grandmother, age 38 in the father, and age 22 in the son. The most likely explanation is:</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('hd2',0,1,`The pattern of decreasing age of onset across generations is the hallmark of anticipation. The CAG repeat expands during DNA replication (especially during spermatogenesis), so each generation has a longer repeat, more toxic protein, and earlier disease. This is NOT random variation. It is a predictable molecular phenomenon.`)"><span class="ck-ltr">A</span><span>Incomplete penetrance, with random variation in age of onset</span></div>
+<div class="ck-opt" onclick="checkAns('hd2',1,1,`The pattern of decreasing age of onset across generations is the hallmark of anticipation. The CAG repeat expands during DNA replication (especially during spermatogenesis), so each generation has a longer repeat, more toxic protein, and earlier disease. This is NOT random variation. It is a predictable molecular phenomenon.`)"><span class="ck-ltr">B</span><span>Anticipation, caused by expansion of the CAG repeat during spermatogenesis across generations</span></div>
+<div class="ck-opt" onclick="checkAns('hd2',2,1,`The pattern of decreasing age of onset across generations is the hallmark of anticipation. The CAG repeat expands during DNA replication (especially during spermatogenesis), so each generation has a longer repeat, more toxic protein, and earlier disease. This is NOT random variation. It is a predictable molecular phenomenon.`)"><span class="ck-ltr">C</span><span>Environmental factors causing earlier exposure in each generation</span></div>
+<div class="ck-opt" onclick="checkAns('hd2',3,1,`The pattern of decreasing age of onset across generations is the hallmark of anticipation. The CAG repeat expands during DNA replication (especially during spermatogenesis), so each generation has a longer repeat, more toxic protein, and earlier disease. This is NOT random variation. It is a predictable molecular phenomenon.`)"><span class="ck-ltr">D</span><span>X-linked inheritance with variable expressivity</span></div>
+</div>
+<div class="ck-fb" id="hd2-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Autosomal Dominant Inheritance</div>
-<p>Only one mutant copy is needed for disease. Each child of an affected parent has a 50% chance of inheriting the allele. Unlike autosomal recessive diseases, there are no "carriers" who are phenotypically normal. However, Huntington has a cruel twist: symptoms typically appear around age 35-45, after most individuals have already had children. By the time a person knows they carry the gene, they may have already passed it on. This raises profound ethical questions about genetic testing, which the MCAT's psychology/sociology section may address.</p>
-<p>Huntington demonstrates <strong>complete penetrance</strong> (100% of people with 40+ repeats develop the disease) but <strong>variable expressivity</strong> (age of onset and severity vary depending on repeat length).</p>
+<h3 class="sh">The Basal Ganglia: Why Patients Cannot Stop Moving</h3>
+<p class="p">The basal ganglia are a group of subcortical nuclei that regulate voluntary movement. They do not initiate movement (that is the motor cortex). Instead, they act as a <strong>filter</strong> that selects desired movements and suppresses unwanted ones. Think of the basal ganglia as a sophisticated gate: they decide which motor signals from the cortex are allowed to proceed and which are blocked.</p>
+<p class="p">There are two pathways through the basal ganglia. The <strong>direct pathway</strong> facilitates movement: cortex excites the striatum, the striatum inhibits the globus pallidus interna (GPi), and since GPi normally inhibits the thalamus, inhibiting GPi releases (disinhibits) the thalamus, which then excites the motor cortex to produce movement. Think of it as removing the brake. The <strong>indirect pathway</strong> suppresses movement: the striatum inhibits the globus pallidus externa (GPe), which normally inhibits the subthalamic nucleus (STN). With GPe inhibited, STN is active, and it excites GPi, which inhibits the thalamus. The net effect is less thalamic excitation of the cortex, meaning movement is suppressed. Think of it as applying the brake.</p>
+<p class="p">In Huntington disease, the GABAergic neurons of the <strong>indirect pathway</strong> are the first to degenerate. Without the indirect pathway applying the brake, the thalamus is excessively active, sending too many excitatory signals to the motor cortex. The result is <strong>chorea</strong>: involuntary, random, dance-like movements that the patient cannot control. The patient's body is constantly moving because the brake system is broken.</p>
+<p class="p">Compare this to <strong>Parkinson disease</strong>: in Parkinson, dopaminergic neurons in the substantia nigra pars compacta die. These neurons normally excite the direct pathway (via D1 receptors) and inhibit the indirect pathway (via D2 receptors). Losing them means the direct pathway is underactive (less "go" signal) and the indirect pathway is overactive (more "stop" signal). The result is the opposite of Huntington: difficulty <strong>initiating</strong> movement (bradykinesia), rigidity, resting tremor, and shuffling gait.</p>
+
+<div class="check" id="hd3">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Huntington disease causes chorea (involuntary movements), while Parkinson disease causes bradykinesia (difficulty initiating movement). Both involve the basal ganglia. Which pathway is primarily affected in each?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('hd3',0,1,`Huntington: loss of indirect pathway GABAergic neurons removes the brake on movement, causing excess involuntary movement (chorea). Parkinson: loss of dopaminergic input from the substantia nigra weakens the direct pathway (less go signal) and releases the indirect pathway (more stop signal), making it hard to initiate movement. Opposite effects from damage to different components of the same circuit.`)"><span class="ck-ltr">A</span><span>Huntington: direct pathway loss; Parkinson: indirect pathway loss</span></div>
+<div class="ck-opt" onclick="checkAns('hd3',1,1,`Huntington: loss of indirect pathway GABAergic neurons removes the brake on movement, causing excess involuntary movement (chorea). Parkinson: loss of dopaminergic input from the substantia nigra weakens the direct pathway (less go signal) and releases the indirect pathway (more stop signal), making it hard to initiate movement. Opposite effects from damage to different components of the same circuit.`)"><span class="ck-ltr">B</span><span>Huntington: indirect pathway loss (brake removed, too much movement); Parkinson: direct pathway underactivation (accelerator weakened, too little movement)</span></div>
+<div class="ck-opt" onclick="checkAns('hd3',2,1,`Huntington: loss of indirect pathway GABAergic neurons removes the brake on movement, causing excess involuntary movement (chorea). Parkinson: loss of dopaminergic input from the substantia nigra weakens the direct pathway (less go signal) and releases the indirect pathway (more stop signal), making it hard to initiate movement. Opposite effects from damage to different components of the same circuit.`)"><span class="ck-ltr">C</span><span>Both diseases affect the same pathway but in opposite directions</span></div>
+<div class="ck-opt" onclick="checkAns('hd3',3,1,`Huntington: loss of indirect pathway GABAergic neurons removes the brake on movement, causing excess involuntary movement (chorea). Parkinson: loss of dopaminergic input from the substantia nigra weakens the direct pathway (less go signal) and releases the indirect pathway (more stop signal), making it hard to initiate movement. Opposite effects from damage to different components of the same circuit.`)"><span class="ck-ltr">D</span><span>Huntington affects the cerebellum; Parkinson affects the basal ganglia</span></div>
+</div>
+<div class="ck-fb" id="hd3-fb"></div>
 </div>
 
-<div class="box box-chain">
-<div class="label">MCAT Concept: Anticipation</div>
-<p>Trinucleotide repeats are unstable during DNA replication. The repeat region can expand from one generation to the next, particularly during <strong>spermatogenesis</strong> (the many rounds of mitotic division in spermatogonia increase the chance of replication slippage). This means a father with 42 repeats may pass on 50+ repeats to his child. More repeats = more toxic protein = earlier onset = more severe disease. This phenomenon of <strong>increasing severity and earlier onset across generations</strong> is called anticipation.</p>
-<p>If the MCAT shows a pedigree where each generation develops symptoms younger than the last, the answer is anticipation from trinucleotide repeat expansion.</p>
+<div class="mcat-ex" id="hd-mcat1">
+<div class="mx-head">MCAT-Style Example</div>
+
+<div class="ck-q">A patient with Huntington disease is found to have 45 CAG repeats in the huntingtin gene. His unaffected father has 38 repeats. The patient developed symptoms at age 35, while his father remains asymptomatic at age 60. Which statement best explains the father's lack of symptoms despite having 38 repeats?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('hd-mcat1',0,0,`The range of 36-39 CAG repeats shows <strong>reduced penetrance</strong>: some individuals develop disease and others do not. Full penetrance occurs at 40+ repeats. The father at 38 repeats is in this gray zone. The son inherited an expanded allele (45 repeats, full penetrance range), explaining his earlier onset. This tests the concepts of penetrance, the anticipation mechanism, and the distinction between reduced and complete penetrance.`)"><span class="ck-ltr">A</span><span>38 repeats is below the threshold for disease; Huntington has reduced penetrance at 36-39 repeats</span></div>
+<div class="ck-opt" onclick="checkAns('hd-mcat1',1,0,`The range of 36-39 CAG repeats shows <strong>reduced penetrance</strong>: some individuals develop disease and others do not. Full penetrance occurs at 40+ repeats. The father at 38 repeats is in this gray zone. The son inherited an expanded allele (45 repeats, full penetrance range), explaining his earlier onset. This tests the concepts of penetrance, the anticipation mechanism, and the distinction between reduced and complete penetrance.`)"><span class="ck-ltr">B</span><span>The father has a protective mutation on the other allele</span></div>
+<div class="ck-opt" onclick="checkAns('hd-mcat1',2,0,`The range of 36-39 CAG repeats shows <strong>reduced penetrance</strong>: some individuals develop disease and others do not. Full penetrance occurs at 40+ repeats. The father at 38 repeats is in this gray zone. The son inherited an expanded allele (45 repeats, full penetrance range), explaining his earlier onset. This tests the concepts of penetrance, the anticipation mechanism, and the distinction between reduced and complete penetrance.`)"><span class="ck-ltr">C</span><span>Environmental factors prevented disease in the father</span></div>
+<div class="ck-opt" onclick="checkAns('hd-mcat1',3,0,`The range of 36-39 CAG repeats shows <strong>reduced penetrance</strong>: some individuals develop disease and others do not. Full penetrance occurs at 40+ repeats. The father at 38 repeats is in this gray zone. The son inherited an expanded allele (45 repeats, full penetrance range), explaining his earlier onset. This tests the concepts of penetrance, the anticipation mechanism, and the distinction between reduced and complete penetrance.`)"><span class="ck-ltr">D</span><span>Huntington only manifests when inherited from the mother</span></div>
+</div>
+<div class="ck-fb" id="hd-mcat1-fb"></div>
 </div>
 
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Basal Ganglia and Motor Control</div>
-<p>The hallmark of Huntington is <strong>chorea</strong>: involuntary, jerky, dance-like movements. This happens because the caudate and putamen (striatum) normally <strong>inhibit</strong> unwanted movements via the indirect pathway of the basal ganglia. In Huntington, GABAergic neurons in the striatum degenerate. GABA is the major inhibitory neurotransmitter of the CNS. When these inhibitory neurons die, the thalamus is disinhibited and sends excessive excitatory signals to the motor cortex, producing involuntary movements.</p>
-<p>Compare this to <strong>Parkinson disease</strong>: loss of dopaminergic neurons in the substantia nigra pars compacta reduces excitation of the direct pathway, leading to difficulty <strong>initiating</strong> movement (bradykinesia, rigidity, tremor at rest). Huntington = too much movement (lost inhibition). Parkinson = too little movement (lost excitation). The MCAT loves comparing these two.</p>
-</div>
-
-<div class="box box-trap">
-<div class="label">MCAT Trap: Trinucleotide Repeat Diseases Are Not All Alike</div>
-<table class="dt"><tr><th>Disease</th><th>Repeat</th><th>Inheritance</th><th>Mechanism</th></tr>
-<tr><td>Huntington</td><td>CAG (polyQ)</td><td>AD</td><td>Toxic gain of function (aggregation)</td></tr>
-<tr><td>Fragile X</td><td>CGG</td><td>X-linked dominant</td><td>Gene silencing (methylation)</td></tr>
-<tr><td>Myotonic dystrophy</td><td>CTG</td><td>AD</td><td>Toxic RNA</td></tr>
-<tr><td>Friedreich ataxia</td><td>GAA</td><td><strong>AR (the outlier)</strong></td><td>Gene silencing (heterochromatin)</td></tr></table>
-<p>Friedreich ataxia is the one that does not fit: it is autosomal <strong>recessive</strong> (all others are dominant or X-linked), and the GAA expansion silences the frataxin gene (loss of function) rather than creating a toxic protein (gain of function). The MCAT asks which trinucleotide repeat disorder is the exception.</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Autosomal dominant inheritance and penetrance vs expressivity. Trinucleotide repeat expansion mechanism (replication slippage). Anticipation. Protein misfolding and aggregation (compare to prion diseases, Alzheimer amyloid, alpha-synuclein in Parkinson). Basal ganglia circuitry (direct vs indirect pathways). GABAergic inhibitory neurotransmission. Comparison of Huntington (hyperkinetic) vs Parkinson (hypokinetic). Ethical considerations of presymptomatic genetic testing. Gain-of-function vs loss-of-function mutations.</p>
+<div class="box box-story"><div class="lb">What You Learned From Huntington Disease</div>
+<p>Autosomal dominant inheritance and the concept of penetrance (complete vs reduced). Trinucleotide repeat expansion and replication slippage. Anticipation and why paternal transmission causes greater expansion. Protein misfolding and aggregation (compare to Alzheimer amyloid-beta, Parkinson alpha-synuclein, prion diseases). Basal ganglia circuitry: direct pathway (facilitates movement), indirect pathway (suppresses movement). GABAergic inhibitory neurotransmission. The thalamus as a relay to motor cortex. Huntington (hyperkinetic, indirect pathway loss) vs Parkinson (hypokinetic, dopaminergic input loss). Gain-of-function vs loss-of-function mutations. Ethical considerations of presymptomatic genetic testing (testing a 20-year-old who may develop an untreatable fatal disease at 40).</p>
 </div>
 </div>
-
 
 <div class="section" id="sec-pku">
-<div class="disease-header">
-<h2>Phenylketonuria (PKU)</h2>
-<div class="subtitle">An enzyme deficiency that teaches metabolism, cofactors, and the power of early intervention</div>
-<span class="genetics-badge" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Enzyme Kinetics</span><span class="ct ct-blue">Amino Acid Metabolism</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Cofactors (BH4)</span><span class="ct ct-purple">Neurodevelopment</span><span class="ct ct-teal">Newborn Screening</span>
+<div class="dh"><h2>Phenylketonuria (PKU)</h2><div class="st">A blocked enzyme that teaches metabolism, cofactors, and the blood-brain barrier</div>
+<span class="gb" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive</span></div>
+
+<h3 class="sh">The Blocked Pathway</h3>
+<p class="p"><strong>Phenylalanine hydroxylase (PAH)</strong> converts phenylalanine to tyrosine. It requires the cofactor <strong>tetrahydrobiopterin (BH4)</strong> and molecular oxygen. Without PAH, phenylalanine accumulates to toxic levels while tyrosine becomes deficient. The excess phenylalanine is shunted into an alternative pathway: transamination converts it to <strong>phenylpyruvate</strong> (the "phenylketone" that gives the disease its name), which is excreted in the urine and gives it a musty odor.</p>
+<p class="p">Tyrosine is normally a <strong>nonessential amino acid</strong> because the body makes it from phenylalanine. In PKU, tyrosine becomes <strong>conditionally essential</strong> because the conversion pathway is blocked. This has consequences for everything tyrosine is used for: melanin synthesis (PKU patients have fair skin and light hair), and neurotransmitter synthesis (tyrosine is the precursor to DOPA, then dopamine, then norepinephrine, then epinephrine).</p>
+<p class="p">The brain damage in PKU comes from two mechanisms. First, phenylalanine is directly toxic to developing neurons. Second, excess phenylalanine in the blood competes with other large neutral amino acids (tyrosine, tryptophan, leucine, isoleucine, valine) for the <strong>LAT1 transporter</strong> across the blood-brain barrier. This is <strong>competitive inhibition in a physiological context</strong>: the transporter has a finite number of binding sites, and when Phe saturates them, other amino acids cannot get through. Reduced tryptophan in the brain means reduced serotonin synthesis. Reduced tyrosine means reduced catecholamine synthesis.</p>
+
+<div class="check" id="pku1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">In PKU, tyrosine becomes conditionally essential. What does this mean?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('pku1',0,1,`Normally the body converts Phe to Tyr via PAH, so Tyr does not need to come from food (nonessential). When PAH is absent, the body cannot make Tyr, so it must come from the diet (conditionally essential). This concept, that the classification of an amino acid can change based on metabolic context, is a favorite MCAT topic.`)"><span class="ck-ltr">A</span><span>Tyrosine is always required in the diet</span></div>
+<div class="ck-opt" onclick="checkAns('pku1',1,1,`Normally the body converts Phe to Tyr via PAH, so Tyr does not need to come from food (nonessential). When PAH is absent, the body cannot make Tyr, so it must come from the diet (conditionally essential). This concept, that the classification of an amino acid can change based on metabolic context, is a favorite MCAT topic.`)"><span class="ck-ltr">B</span><span>Tyrosine is normally made from phenylalanine, but since that pathway is blocked, it must now come from the diet</span></div>
+<div class="ck-opt" onclick="checkAns('pku1',2,1,`Normally the body converts Phe to Tyr via PAH, so Tyr does not need to come from food (nonessential). When PAH is absent, the body cannot make Tyr, so it must come from the diet (conditionally essential). This concept, that the classification of an amino acid can change based on metabolic context, is a favorite MCAT topic.`)"><span class="ck-ltr">C</span><span>Tyrosine is toxic and must be avoided</span></div>
+<div class="ck-opt" onclick="checkAns('pku1',3,1,`Normally the body converts Phe to Tyr via PAH, so Tyr does not need to come from food (nonessential). When PAH is absent, the body cannot make Tyr, so it must come from the diet (conditionally essential). This concept, that the classification of an amino acid can change based on metabolic context, is a favorite MCAT topic.`)"><span class="ck-ltr">D</span><span>Tyrosine replaces phenylalanine in protein synthesis</span></div>
 </div>
+<div class="ck-fb" id="pku1-fb"></div>
 </div>
 
-<div class="prose">
-<p>PKU is caused by deficiency of <strong>phenylalanine hydroxylase</strong> (PAH), the enzyme that converts phenylalanine to tyrosine. Without PAH, phenylalanine accumulates to toxic levels in the blood and brain. The enzyme requires <strong>tetrahydrobiopterin (BH4)</strong> as a cofactor and molecular oxygen as a co-substrate. This is a monooxygenase reaction: one atom of O2 is incorporated into tyrosine, and the other is reduced to water.</p>
+<div class="check" id="pku2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A woman with PKU who does not follow dietary restrictions becomes pregnant. Her baby is born with intellectual disability and heart defects, even though the baby does not have PKU. Why?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('pku2',0,1,`This is maternal PKU syndrome. The baby may be genotypically normal (or a carrier), but the high maternal Phe crosses the placenta and is teratogenic to the developing fetus. The damage is from the intrauterine environment, not from the baby genes. This teaches the concept of teratogenesis and the distinction between genetic disease and environmentally-caused birth defects.`)"><span class="ck-ltr">A</span><span>The mother passed on two PKU alleles to the baby</span></div>
+<div class="ck-opt" onclick="checkAns('pku2',1,1,`This is maternal PKU syndrome. The baby may be genotypically normal (or a carrier), but the high maternal Phe crosses the placenta and is teratogenic to the developing fetus. The damage is from the intrauterine environment, not from the baby genes. This teaches the concept of teratogenesis and the distinction between genetic disease and environmentally-caused birth defects.`)"><span class="ck-ltr">B</span><span>High maternal phenylalanine crossed the placenta and damaged the developing fetus (teratogenic effect)</span></div>
+<div class="ck-opt" onclick="checkAns('pku2',2,1,`This is maternal PKU syndrome. The baby may be genotypically normal (or a carrier), but the high maternal Phe crosses the placenta and is teratogenic to the developing fetus. The damage is from the intrauterine environment, not from the baby genes. This teaches the concept of teratogenesis and the distinction between genetic disease and environmentally-caused birth defects.`)"><span class="ck-ltr">C</span><span>The baby inherited one PKU allele and is a carrier with symptoms</span></div>
+<div class="ck-opt" onclick="checkAns('pku2',3,1,`This is maternal PKU syndrome. The baby may be genotypically normal (or a carrier), but the high maternal Phe crosses the placenta and is teratogenic to the developing fetus. The damage is from the intrauterine environment, not from the baby genes. This teaches the concept of teratogenesis and the distinction between genetic disease and environmentally-caused birth defects.`)"><span class="ck-ltr">D</span><span>The father must also be a carrier</span></div>
+</div>
+<div class="ck-fb" id="pku2-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Enzyme Kinetics in Real Life</div>
-<p>PKU patients have essentially zero PAH activity (Vmax approaches zero). No matter how much phenylalanine is present, it cannot be converted to tyrosine. This is the real-world equivalent of a Lineweaver-Burk plot where the enzyme is completely inhibited. Treatment is dietary restriction of phenylalanine (reducing substrate below toxic threshold) rather than adding more enzyme.</p>
-<p>Some patients have a milder form caused by BH4 deficiency rather than PAH deficiency. These patients respond to BH4 supplementation. This teaches the MCAT concept of <strong>cofactor vs enzyme deficiency</strong>: if the enzyme is present but its required cofactor is missing, supplying the cofactor can restore activity. If the enzyme itself is absent/nonfunctional, the cofactor does not help.</p>
-</div>
-
-<div class="box box-chain">
-<div class="label">The Domino Chain: Blocked Pathway, Toxic Accumulation</div>
-<div class="chain"><span class="node">PAH deficient</span><span class="arrow">&#8594;</span><span class="node">Phe cannot become Tyr</span><span class="arrow">&#8594;</span><span class="node">Phe accumulates</span><span class="arrow">&#8594;</span><span class="node">Converted to phenylpyruvate (phenylketone)</span><span class="arrow">&#8594;</span><span class="node">Excreted in urine (musty smell)</span></div>
-<div class="chain"><span class="node">Excess Phe in brain</span><span class="arrow">&#8594;</span><span class="node">Competes with other large neutral amino acids for transport across BBB</span><span class="arrow">&#8594;</span><span class="node">Reduced tryptophan uptake</span><span class="arrow">&#8594;</span><span class="node">Reduced serotonin synthesis</span></div>
-<div class="chain"><span class="node">Tyrosine now essential</span><span class="arrow">&#8594;</span><span class="node">Less melanin production</span><span class="arrow">&#8594;</span><span class="node">Fair skin, light hair</span></div>
-<div class="chain"><span class="node">Less tyrosine</span><span class="arrow">&#8594;</span><span class="node">Less dopamine, NE, epi synthesis</span><span class="arrow">&#8594;</span><span class="node">Neurotransmitter deficits</span></div>
-</div>
-
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Essential vs Nonessential Amino Acids</div>
-<p>Phenylalanine is an <strong>essential</strong> amino acid (humans cannot synthesize it; must be obtained from diet). Tyrosine is normally <strong>nonessential</strong> because it is made from phenylalanine. But in PKU, the conversion is blocked, making tyrosine <strong>conditionally essential</strong>. This is a favorite MCAT concept: the classification of an amino acid as essential or nonessential can change depending on the metabolic context. Similarly, arginine is nonessential in adults but essential in infants (they cannot synthesize enough via the urea cycle).</p>
-</div>
-
-<div class="box box-connect">
-<div class="label">MCAT Concept: Blood-Brain Barrier Transport</div>
-<p>Large neutral amino acids (Phe, Tyr, Trp, Leu, Ile, Val) share a common transporter (LAT1) across the blood-brain barrier. When phenylalanine is extremely elevated, it saturates the transporter, competitively excluding other amino acids from entering the brain. This reduces brain levels of tryptophan (precursor to serotonin) and tyrosine (precursor to dopamine, norepinephrine, epinephrine). This is competitive inhibition in a physiological context: excess Phe acts like a competitive inhibitor for the transport of other amino acids across the BBB.</p>
-</div>
-
-<div class="box box-trap">
-<div class="label">MCAT Trap: Maternal PKU</div>
-<p>A woman with PKU who is not on dietary restriction has high blood phenylalanine. If she becomes pregnant, her excess Phe crosses the placenta and damages the developing fetus, causing intellectual disability, microcephaly, and congenital heart defects, even if the fetus has a normal genotype (is a carrier or unaffected). This is not a genetic disease in the fetus; it is a <strong>teratogenic</strong> effect of the mother's metabolic disorder. The MCAT tests whether you understand that the fetus's genotype does not matter here. The damage comes from the maternal environment.</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Enzyme kinetics (Vmax, cofactors, competitive inhibition at transporters). Amino acid metabolism (Phe to Tyr pathway, transamination producing phenylpyruvate). Essential vs nonessential amino acids (and conditional essentiality). Cofactor biochemistry (BH4, tetrahydrobiopterin). Neurotransmitter synthesis pathways (Tyr to DOPA to dopamine to NE to epi; Trp to serotonin). Blood-brain barrier transport (LAT1 transporter, competitive kinetics). Melanin synthesis. Autosomal recessive inheritance. Newborn screening ethics. Teratogenesis (maternal PKU).</p>
-</div>
-</div>
-
-
-<div class="section" id="sec-diabetes">
-<div class="disease-header">
-<h2>Type 1 Diabetes Mellitus</h2>
-<div class="subtitle">The body's greatest domino chain, from autoimmunity to every organ system</div>
-<span class="genetics-badge" style="background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-border)">Polygenic + Autoimmune</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Receptor Tyrosine Kinases</span><span class="ct ct-blue">Autoimmunity</span><span class="ct ct-green">Metabolic Pathways</span><span class="ct ct-amber">Acid-Base Balance</span><span class="ct ct-purple">Renal Physiology</span><span class="ct ct-teal">Cardiovascular</span>
+<div class="box box-story"><div class="lb">What You Learned From PKU</div>
+<p>Enzyme deficiency and pathway blockade. Essential vs nonessential vs conditionally essential amino acids. Cofactors (BH4) vs enzyme deficiency (some PKU responds to BH4 supplementation). Transamination reactions. Neurotransmitter synthesis pathways (Tyr to catecholamines, Trp to serotonin). Blood-brain barrier transport and competitive inhibition at LAT1. Melanin synthesis. Newborn screening. Maternal PKU and teratogenesis. Autosomal recessive inheritance.</p>
 </div>
 </div>
 
-<div class="prose">
-<p>Type 1 diabetes is an <strong>autoimmune disease</strong> in which T cells destroy pancreatic beta cells. It has a strong genetic component (HLA-DR3 and HLA-DR4 associations) but is not strictly Mendelian. The loss of beta cells means loss of insulin. Understanding what insulin does, and what happens without it, connects virtually every metabolic pathway the MCAT tests.</p>
+<div class="section" id="sec-diabetes">
+<div class="dh"><h2>Type 1 Diabetes</h2><div class="st">The body's greatest domino chain: autoimmunity to every organ system</div>
+<span class="gb" style="background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-border)">Polygenic + Autoimmune</span></div>
+
+<h3 class="sh">Insulin Signaling: The Master Metabolic Switch</h3>
+<p class="p">Insulin is released by pancreatic beta cells when blood glucose rises (after a meal). It binds the <strong>insulin receptor</strong>, a receptor tyrosine kinase (RTK). Upon insulin binding, the receptor autophosphorylates tyrosine residues on its intracellular domain. These phosphotyrosines serve as docking sites for <strong>IRS (insulin receptor substrate)</strong> proteins, which activate two major pathways.</p>
+<p class="p">The <strong>PI3K/Akt pathway</strong> handles metabolism: it causes GLUT4 glucose transporters to translocate from intracellular vesicles to the cell membrane (allowing glucose uptake into muscle and fat), activates glycogen synthase (storing glucose as glycogen), stimulates lipogenic enzymes (making fat from excess glucose), and inhibits gluconeogenic enzymes in the liver (stopping glucose production). The <strong>Ras/MAPK pathway</strong> handles growth: it promotes cell proliferation and differentiation.</p>
+<p class="p">Critical point: not all tissues need insulin for glucose uptake. The brain uses <strong>GLUT1</strong> (insulin-independent, always present on the cell surface). The liver uses <strong>GLUT2</strong> (insulin-independent, always present, bidirectional). Red blood cells use <strong>GLUT1</strong>. Muscle and adipose tissue use <strong>GLUT4</strong> (insulin-dependent). This is why in diabetes, the brain does not starve (it gets glucose regardless of insulin), but muscles and fat tissue are glucose-deprived despite high blood glucose.</p>
+
+<div class="check" id="dm1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A Type 1 diabetic patient has very high blood glucose but their muscle cells are starved for glucose. Why?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('dm1',0,1,`GLUT4 is stored in intracellular vesicles. Insulin signaling (via PI3K/Akt) causes these vesicles to fuse with the plasma membrane, inserting GLUT4 into the surface where it can transport glucose. Without insulin, GLUT4 never reaches the surface, and glucose cannot enter. The glucose stays in the blood (hyperglycemia) while insulin-dependent tissues starve.`)"><span class="ck-ltr">A</span><span>Muscle cells lack glucose transporters entirely</span></div>
+<div class="ck-opt" onclick="checkAns('dm1',1,1,`GLUT4 is stored in intracellular vesicles. Insulin signaling (via PI3K/Akt) causes these vesicles to fuse with the plasma membrane, inserting GLUT4 into the surface where it can transport glucose. Without insulin, GLUT4 never reaches the surface, and glucose cannot enter. The glucose stays in the blood (hyperglycemia) while insulin-dependent tissues starve.`)"><span class="ck-ltr">B</span><span>Muscle cells use GLUT4, which requires insulin to translocate to the cell surface; without insulin, GLUT4 stays intracellular</span></div>
+<div class="ck-opt" onclick="checkAns('dm1',2,1,`GLUT4 is stored in intracellular vesicles. Insulin signaling (via PI3K/Akt) causes these vesicles to fuse with the plasma membrane, inserting GLUT4 into the surface where it can transport glucose. Without insulin, GLUT4 never reaches the surface, and glucose cannot enter. The glucose stays in the blood (hyperglycemia) while insulin-dependent tissues starve.`)"><span class="ck-ltr">C</span><span>High glucose inhibits all glucose transporters</span></div>
+<div class="ck-opt" onclick="checkAns('dm1',3,1,`GLUT4 is stored in intracellular vesicles. Insulin signaling (via PI3K/Akt) causes these vesicles to fuse with the plasma membrane, inserting GLUT4 into the surface where it can transport glucose. Without insulin, GLUT4 never reaches the surface, and glucose cannot enter. The glucose stays in the blood (hyperglycemia) while insulin-dependent tissues starve.`)"><span class="ck-ltr">D</span><span>Muscle cells only use fatty acids for fuel</span></div>
+</div>
+<div class="ck-fb" id="dm1-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Insulin Signaling (Receptor Tyrosine Kinase)</div>
-<p>Insulin binds the insulin receptor, a <strong>receptor tyrosine kinase (RTK)</strong>. The receptor autophosphorylates, recruits IRS (insulin receptor substrate), activating two pathways: <strong>PI3K/Akt</strong> (drives GLUT4 translocation to membrane for glucose uptake, activates glycogen synthase, stimulates lipogenesis, inhibits gluconeogenesis) and <strong>Ras/MAPK</strong> (promotes cell growth and proliferation). Without insulin, PI3K/Akt is silent: GLUT4 stays intracellular, cells cannot take up glucose, and all downstream metabolic effects are reversed.</p>
-<p>Note: brain and liver take up glucose independently of insulin (GLUT1 and GLUT2 are insulin-independent). Red blood cells use GLUT1. Muscle and adipose require insulin-dependent GLUT4. This is why the brain does not starve in diabetes but muscles do.</p>
+<h3 class="sh">DKA: The Metabolic Emergency</h3>
+<p class="p">Without insulin, the liver behaves as though the body is starving (because insulin is the "fed state" signal). It ramps up <strong>gluconeogenesis</strong> (making glucose from amino acids and glycerol), raising blood glucose even higher. Insulin normally inhibits <strong>lipolysis</strong> in adipose tissue; without it, free fatty acids (FFAs) flood the bloodstream. The liver converts FFAs to acetyl-CoA via beta-oxidation, but the TCA cycle cannot process all of it (the TCA cycle intermediates are being drained off for gluconeogenesis). The excess acetyl-CoA is shunted to <strong>ketogenesis</strong>, producing acetoacetate, beta-hydroxybutyrate, and acetone. These ketone bodies are organic acids that consume bicarbonate buffer and lower blood pH. This is <strong>diabetic ketoacidosis (DKA)</strong>.</p>
+
+<div class="check" id="dm2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">In DKA, serum potassium is often elevated despite total body potassium being depleted. Why?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('dm2',0,1,`Two forces push K+ out of cells: (1) In acidosis, excess H+ enters cells, and K+ leaves to maintain electroneutrality (H+/K+ exchange). (2) Insulin normally stimulates the Na+/K+-ATPase, driving K+ into cells; without insulin, this uptake stops. The serum K+ rises even though osmotic diuresis is washing total body K+ out through the kidneys. This is critical: when insulin is given to treat DKA, K+ rushes back into cells and the patient can become dangerously hypokalemic.`)"><span class="ck-ltr">A</span><span>The kidneys are actively retaining potassium</span></div>
+<div class="ck-opt" onclick="checkAns('dm2',1,1,`Two forces push K+ out of cells: (1) In acidosis, excess H+ enters cells, and K+ leaves to maintain electroneutrality (H+/K+ exchange). (2) Insulin normally stimulates the Na+/K+-ATPase, driving K+ into cells; without insulin, this uptake stops. The serum K+ rises even though osmotic diuresis is washing total body K+ out through the kidneys. This is critical: when insulin is given to treat DKA, K+ rushes back into cells and the patient can become dangerously hypokalemic.`)"><span class="ck-ltr">B</span><span>Acidosis drives H+ into cells and K+ out (to maintain electroneutrality), and insulin deficiency removes the normal stimulus for K+ uptake into cells</span></div>
+<div class="ck-opt" onclick="checkAns('dm2',2,1,`Two forces push K+ out of cells: (1) In acidosis, excess H+ enters cells, and K+ leaves to maintain electroneutrality (H+/K+ exchange). (2) Insulin normally stimulates the Na+/K+-ATPase, driving K+ into cells; without insulin, this uptake stops. The serum K+ rises even though osmotic diuresis is washing total body K+ out through the kidneys. This is critical: when insulin is given to treat DKA, K+ rushes back into cells and the patient can become dangerously hypokalemic.`)"><span class="ck-ltr">C</span><span>Ketone bodies bind potassium in the blood</span></div>
+<div class="ck-opt" onclick="checkAns('dm2',3,1,`Two forces push K+ out of cells: (1) In acidosis, excess H+ enters cells, and K+ leaves to maintain electroneutrality (H+/K+ exchange). (2) Insulin normally stimulates the Na+/K+-ATPase, driving K+ into cells; without insulin, this uptake stops. The serum K+ rises even though osmotic diuresis is washing total body K+ out through the kidneys. This is critical: when insulin is given to treat DKA, K+ rushes back into cells and the patient can become dangerously hypokalemic.`)"><span class="ck-ltr">D</span><span>Elevated glucose blocks renal potassium excretion</span></div>
+</div>
+<div class="ck-fb" id="dm2-fb"></div>
 </div>
 
-<div class="box box-chain">
-<div class="label">The Metabolic Catastrophe Without Insulin</div>
-<div class="chain"><span class="node">No insulin</span><span class="arrow">&#8594;</span><span class="node">GLUT4 stays intracellular</span><span class="arrow">&#8594;</span><span class="node">Cells starving despite high glucose</span></div>
-<div class="chain"><span class="node">Liver "thinks" body is fasting</span><span class="arrow">&#8594;</span><span class="node">Ramps up gluconeogenesis</span><span class="arrow">&#8594;</span><span class="node">Blood glucose rises even higher</span></div>
-<div class="chain"><span class="node">No insulin to inhibit lipolysis</span><span class="arrow">&#8594;</span><span class="node">FFAs flood liver</span><span class="arrow">&#8594;</span><span class="node">Excess acetyl-CoA (TCA overloaded)</span><span class="arrow">&#8594;</span><span class="node">Ketogenesis</span><span class="arrow">&#8594;</span><span class="node">DKA</span></div>
-<div class="chain"><span class="node">Glucose >180 mg/dL</span><span class="arrow">&#8594;</span><span class="node">Exceeds renal threshold</span><span class="arrow">&#8594;</span><span class="node">Glycosuria</span><span class="arrow">&#8594;</span><span class="node">Osmotic diuresis</span><span class="arrow">&#8594;</span><span class="node">Polyuria, polydipsia</span></div>
+<div class="mcat-ex" id="dm-mcat1">
+<div class="mx-head">MCAT-Style Example</div>
+<div class="mx-passage">A 45-year-old with Type 2 diabetes has the following labs: creatinine 3.8 mg/dL (high), calcium 7.2 mg/dL (low), PTH 180 pg/mL (high), phosphate 6.1 mg/dL (high), hemoglobin 9.0 g/dL (low).</div>
+<div class="ck-q">Which single pathology best unifies ALL of these lab findings?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('dm-mcat1',0,1,`This is the classic CKD constellation: high creatinine (kidney failure), low calcium (kidneys cannot activate vitamin D via 1-alpha-hydroxylase, so GI calcium absorption drops), high PTH (parathyroid glands respond to low calcium by increasing PTH), high phosphate (kidneys cannot excrete it), low hemoglobin (kidneys cannot produce EPO). Diabetes caused the CKD, and CKD explains everything else. One disease, five systems: renal, endocrine (vitamin D), skeletal (PTH/calcium), hematologic (EPO), and the original endocrine problem (diabetes).`)"><span class="ck-ltr">A</span><span>Primary hyperparathyroidism with secondary anemia</span></div>
+<div class="ck-opt" onclick="checkAns('dm-mcat1',1,1,`This is the classic CKD constellation: high creatinine (kidney failure), low calcium (kidneys cannot activate vitamin D via 1-alpha-hydroxylase, so GI calcium absorption drops), high PTH (parathyroid glands respond to low calcium by increasing PTH), high phosphate (kidneys cannot excrete it), low hemoglobin (kidneys cannot produce EPO). Diabetes caused the CKD, and CKD explains everything else. One disease, five systems: renal, endocrine (vitamin D), skeletal (PTH/calcium), hematologic (EPO), and the original endocrine problem (diabetes).`)"><span class="ck-ltr">B</span><span>Chronic kidney disease causing failure to activate vitamin D, leading to hypocalcemia, secondary hyperparathyroidism, hyperphosphatemia, and anemia from EPO deficiency</span></div>
+<div class="ck-opt" onclick="checkAns('dm-mcat1',2,1,`This is the classic CKD constellation: high creatinine (kidney failure), low calcium (kidneys cannot activate vitamin D via 1-alpha-hydroxylase, so GI calcium absorption drops), high PTH (parathyroid glands respond to low calcium by increasing PTH), high phosphate (kidneys cannot excrete it), low hemoglobin (kidneys cannot produce EPO). Diabetes caused the CKD, and CKD explains everything else. One disease, five systems: renal, endocrine (vitamin D), skeletal (PTH/calcium), hematologic (EPO), and the original endocrine problem (diabetes).`)"><span class="ck-ltr">C</span><span>Vitamin D overdose causing calcium deposition in the kidneys</span></div>
+<div class="ck-opt" onclick="checkAns('dm-mcat1',3,1,`This is the classic CKD constellation: high creatinine (kidney failure), low calcium (kidneys cannot activate vitamin D via 1-alpha-hydroxylase, so GI calcium absorption drops), high PTH (parathyroid glands respond to low calcium by increasing PTH), high phosphate (kidneys cannot excrete it), low hemoglobin (kidneys cannot produce EPO). Diabetes caused the CKD, and CKD explains everything else. One disease, five systems: renal, endocrine (vitamin D), skeletal (PTH/calcium), hematologic (EPO), and the original endocrine problem (diabetes).`)"><span class="ck-ltr">D</span><span>Parathyroid adenoma with coincidental renal failure</span></div>
+</div>
+<div class="ck-fb" id="dm-mcat1-fb"></div>
 </div>
 
-<div class="box box-mcat">
-<div class="label">MCAT Concept: DKA and Acid-Base</div>
-<p>DKA blood gases: low pH (acidosis), low HCO3- (metabolic), low pCO2 (respiratory compensation via Kussmaul breathing). Ketone bodies (acetoacetate, beta-hydroxybutyrate) are organic acids that consume bicarbonate buffer. The anion gap is elevated (Na+ minus Cl+ minus HCO3- is high because unmeasured anions, the ketoacids, are present). This is a <strong>high anion gap metabolic acidosis</strong>.</p>
-<p>Critical trap: serum K+ is often HIGH in DKA (acidosis drives K+ out of cells, insulin deficiency removes the normal stimulus for K+ uptake). But total body K+ is DEPLETED (osmotic diuresis washes it out). When you give insulin, K+ shifts back into cells and the patient can become dangerously hypokalemic. The MCAT loves this: the serum level and total body content of an electrolyte can be in opposite directions.</p>
-</div>
-
-<div class="box box-connect">
-<div class="label">Long-Term Complications: Every System</div>
-<p>Chronic hyperglycemia produces <strong>advanced glycation end products (AGEs)</strong> that damage the vascular endothelium. Macrovascular: atherosclerosis, MI, stroke. Microvascular: retinopathy (capillary damage in retina), nephropathy (GBM glycosylation, microalbuminuria, eventual ESRD), neuropathy (vasa nervorum damage, peripheral and autonomic). The kidney damage leads to loss of 1-alpha-hydroxylase (no active vitamin D), leading to hypocalcemia, secondary hyperparathyroidism, and osteoporosis. Loss of EPO production causes anemia. Loss of acid excretion causes metabolic acidosis.</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Receptor tyrosine kinase signaling (insulin receptor, PI3K/Akt, Ras/MAPK). GLUT transporter family (insulin-dependent vs independent). Glycolysis, gluconeogenesis, glycogenolysis, lipogenesis, lipolysis, beta-oxidation, ketogenesis (all regulated by insulin). TCA cycle capacity and acetyl-CoA overflow. Acid-base physiology (metabolic acidosis, respiratory compensation, anion gap). Henderson-Hasselbalch in action. Renal threshold and osmotic diuresis. Electrolyte shifts (K+ in acidosis). Autoimmunity and HLA associations. AGE formation and endothelial damage. Renal-endocrine-skeletal connections (vitamin D, PTH, calcium). EPO and anemia. Autonomic neuropathy and baroreceptor reflex.</p>
-</div>
-</div>
-
-
-<div class="section" id="sec-g6pd">
-<div class="disease-header">
-<h2>G6PD Deficiency</h2>
-<div class="subtitle">The pentose phosphate pathway, made unforgettable through hemolytic crises</div>
-<span class="genetics-badge" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)">X-Linked Recessive</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Pentose Phosphate Pathway</span><span class="ct ct-blue">Oxidative Stress</span><span class="ct ct-green">X-Linked Inheritance</span><span class="ct ct-amber">RBC Metabolism</span><span class="ct ct-purple">Pharmacogenomics</span><span class="ct ct-teal">Malaria Resistance</span>
+<div class="box box-story"><div class="lb">What You Learned From Type 1 Diabetes</div>
+<p>Receptor tyrosine kinase signaling (autophosphorylation, IRS, PI3K/Akt, Ras/MAPK). GLUT transporter family (GLUT1 brain/RBC, GLUT2 liver, GLUT4 muscle/fat). Glycolysis, gluconeogenesis, glycogenolysis, glycogen synthesis, lipogenesis, lipolysis, beta-oxidation, ketogenesis. TCA cycle overflow and acetyl-CoA shunting. Acid-base physiology (metabolic acidosis, anion gap, respiratory compensation, Henderson-Hasselbalch). Potassium shifts in acidosis (serum K+ vs total body K+). Renal threshold and osmotic diuresis. AGE formation and endothelial damage. Renal-endocrine-skeletal axis (vitamin D, PTH, calcium). EPO and anemia of CKD. Autoimmunity and HLA associations.</p>
 </div>
 </div>
 
-<div class="prose">
-<p>G6PD (glucose-6-phosphate dehydrogenase) is the rate-limiting enzyme of the <strong>pentose phosphate pathway (PPP)</strong>, also called the hexose monophosphate shunt. This pathway has two critical products: <strong>NADPH</strong> (used for reductive biosynthesis and to combat oxidative stress) and <strong>ribose-5-phosphate</strong> (used for nucleotide synthesis). G6PD deficiency is the most common enzymatic disorder in humans, affecting over 400 million people worldwide.</p>
+<div class="section" id="sec-g6pd">
+<div class="dh"><h2>G6PD Deficiency</h2><div class="st">The pentose phosphate pathway made unforgettable</div>
+<span class="gb" style="background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)">X-Linked Recessive</span></div>
+
+<h3 class="sh">Why Red Blood Cells Are Uniquely Vulnerable</h3>
+<p class="p">Red blood cells have <strong>no mitochondria</strong> (they were ejected during maturation to make room for more hemoglobin), no nucleus, and no ability to make new proteins. They rely on <strong>glycolysis</strong> for all their ATP and on the <strong>pentose phosphate pathway (PPP)</strong> for all their NADPH. G6PD is the first and rate-limiting enzyme of the PPP's oxidative phase. It converts glucose-6-phosphate to 6-phosphogluconate while reducing NADP+ to NADPH.</p>
+<p class="p">NADPH has one critical job in RBCs: it keeps <strong>glutathione</strong> in its reduced form (GSH). Here is the chain: NADPH is used by <strong>glutathione reductase</strong> to convert oxidized glutathione (GSSG) back to reduced glutathione (GSH). GSH is then used by <strong>glutathione peroxidase</strong> to neutralize reactive oxygen species (ROS) like hydrogen peroxide (H2O2), converting them to water. Without G6PD, there is no NADPH. Without NADPH, glutathione cannot be regenerated. Without glutathione, ROS accumulate and oxidize hemoglobin, first to methemoglobin (Fe3+ instead of Fe2+, cannot bind O2), then to denatured aggregates called <strong>Heinz bodies</strong>. Heinz bodies stick to the RBC membrane, making the cell rigid. The spleen recognizes these rigid cells and removes them, or splenic macrophages "bite out" the Heinz body inclusions, leaving <strong>bite cells</strong>.</p>
+
+<div class="check" id="g6pd1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Put these in order: G6PD produces ___, which is used by glutathione reductase to regenerate ___, which is used by glutathione peroxidase to neutralize ___.</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('g6pd1',0,1,`G6PD produces NADPH. Glutathione reductase uses NADPH to reduce GSSG back to GSH. Glutathione peroxidase uses GSH to convert H2O2 to H2O. This chain (G6PD to NADPH to GSH to ROS neutralization) is the entire antioxidant defense of the red blood cell. Break any link and the RBC is defenseless against oxidative stress.`)"><span class="ck-ltr">A</span><span>ATP; GSH; lactic acid</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd1',1,1,`G6PD produces NADPH. Glutathione reductase uses NADPH to reduce GSSG back to GSH. Glutathione peroxidase uses GSH to convert H2O2 to H2O. This chain (G6PD to NADPH to GSH to ROS neutralization) is the entire antioxidant defense of the red blood cell. Break any link and the RBC is defenseless against oxidative stress.`)"><span class="ck-ltr">B</span><span>NADPH; reduced glutathione (GSH); reactive oxygen species (H2O2)</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd1',2,1,`G6PD produces NADPH. Glutathione reductase uses NADPH to reduce GSSG back to GSH. Glutathione peroxidase uses GSH to convert H2O2 to H2O. This chain (G6PD to NADPH to GSH to ROS neutralization) is the entire antioxidant defense of the red blood cell. Break any link and the RBC is defenseless against oxidative stress.`)"><span class="ck-ltr">C</span><span>FADH2; oxidized glutathione (GSSG); superoxide</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd1',3,1,`G6PD produces NADPH. Glutathione reductase uses NADPH to reduce GSSG back to GSH. Glutathione peroxidase uses GSH to convert H2O2 to H2O. This chain (G6PD to NADPH to GSH to ROS neutralization) is the entire antioxidant defense of the red blood cell. Break any link and the RBC is defenseless against oxidative stress.`)"><span class="ck-ltr">D</span><span>NADH; cysteine; hydroxyl radicals</span></div>
+</div>
+<div class="ck-fb" id="g6pd1-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Why RBCs Are Uniquely Vulnerable</div>
-<p>Red blood cells have <strong>no mitochondria</strong>, no nucleus, and no ability to synthesize new proteins. They rely entirely on glycolysis for ATP and entirely on the PPP for NADPH. NADPH is essential for maintaining <strong>glutathione</strong> in its reduced form (GSH). Glutathione reductase uses NADPH to convert oxidized glutathione (GSSG) back to reduced glutathione (GSH). GSH then detoxifies reactive oxygen species (ROS) via glutathione peroxidase. Without G6PD, RBCs cannot make NADPH, cannot regenerate GSH, and are defenseless against oxidative stress. When exposed to oxidants (certain drugs, fava beans, infections), the hemoglobin is oxidized to methemoglobin and then denatures, forming <strong>Heinz bodies</strong> (precipitates of denatured hemoglobin visible on a blood smear with crystal violet stain). The damaged RBCs are removed by splenic macrophages, which bite out the Heinz bodies, leaving <strong>bite cells</strong>.</p>
+<div class="mcat-ex" id="g6pd-mcat1">
+<div class="mx-head">MCAT-Style Example</div>
+<div class="mx-passage">A patient is prescribed primaquine for malaria prophylaxis. Three days later, he presents with fatigue, jaundice, and dark urine. Labs show hemoglobin 7.0 g/dL (low), elevated indirect bilirubin, elevated LDH, and low haptoglobin. Peripheral blood smear shows bite cells.</div>
+<div class="ck-q">The most likely underlying condition is:</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('g6pd-mcat1',0,2,`Primaquine is an oxidant drug. In G6PD deficiency, RBCs cannot produce NADPH to regenerate glutathione, so the oxidative stress from primaquine causes hemoglobin denaturation (Heinz bodies), membrane damage, and hemolysis. The bite cells on smear (splenic macrophages removing Heinz bodies), hemolytic markers (elevated indirect bilirubin and LDH, low haptoglobin), and the drug trigger all point to G6PD deficiency. This is pharmacogenomics: a genetic variant determines drug response.`)"><span class="ck-ltr">A</span><span>Sickle cell disease</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd-mcat1',1,2,`Primaquine is an oxidant drug. In G6PD deficiency, RBCs cannot produce NADPH to regenerate glutathione, so the oxidative stress from primaquine causes hemoglobin denaturation (Heinz bodies), membrane damage, and hemolysis. The bite cells on smear (splenic macrophages removing Heinz bodies), hemolytic markers (elevated indirect bilirubin and LDH, low haptoglobin), and the drug trigger all point to G6PD deficiency. This is pharmacogenomics: a genetic variant determines drug response.`)"><span class="ck-ltr">B</span><span>Autoimmune hemolytic anemia</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd-mcat1',2,2,`Primaquine is an oxidant drug. In G6PD deficiency, RBCs cannot produce NADPH to regenerate glutathione, so the oxidative stress from primaquine causes hemoglobin denaturation (Heinz bodies), membrane damage, and hemolysis. The bite cells on smear (splenic macrophages removing Heinz bodies), hemolytic markers (elevated indirect bilirubin and LDH, low haptoglobin), and the drug trigger all point to G6PD deficiency. This is pharmacogenomics: a genetic variant determines drug response.`)"><span class="ck-ltr">C</span><span>G6PD deficiency</span></div>
+<div class="ck-opt" onclick="checkAns('g6pd-mcat1',3,2,`Primaquine is an oxidant drug. In G6PD deficiency, RBCs cannot produce NADPH to regenerate glutathione, so the oxidative stress from primaquine causes hemoglobin denaturation (Heinz bodies), membrane damage, and hemolysis. The bite cells on smear (splenic macrophages removing Heinz bodies), hemolytic markers (elevated indirect bilirubin and LDH, low haptoglobin), and the drug trigger all point to G6PD deficiency. This is pharmacogenomics: a genetic variant determines drug response.`)"><span class="ck-ltr">D</span><span>Iron deficiency anemia</span></div>
+</div>
+<div class="ck-fb" id="g6pd-mcat1-fb"></div>
 </div>
 
-<div class="box box-chain">
-<div class="label">The Chain: No NADPH, No Defense</div>
-<div class="chain"><span class="node">G6PD deficient</span><span class="arrow">&#8594;</span><span class="node">No NADPH from PPP</span><span class="arrow">&#8594;</span><span class="node">Cannot reduce GSSG to GSH</span><span class="arrow">&#8594;</span><span class="node">ROS accumulate</span><span class="arrow">&#8594;</span><span class="node">Hb oxidized</span><span class="arrow">&#8594;</span><span class="node">Heinz bodies</span><span class="arrow">&#8594;</span><span class="node">Bite cells</span><span class="arrow">&#8594;</span><span class="node">Hemolytic anemia</span></div>
-<p>Triggers: primaquine (antimalarial), sulfonamides, dapsone, nitrofurantoin, fava beans (favism), infections (the oxidative burst of neutrophils fighting the infection creates collateral ROS damage).</p>
-</div>
-
-<div class="box box-mcat">
-<div class="label">MCAT Concept: The PPP in Context</div>
-<p>The PPP branches from glycolysis at glucose-6-phosphate. The oxidative phase (irreversible) produces 2 NADPH per glucose-6-phosphate and converts it to ribulose-5-phosphate. The non-oxidative phase (reversible) interconverts sugars using transketolase (requires thiamine/B1 as TPP cofactor) and transaldolase, connecting back to glycolytic intermediates (fructose-6-phosphate, glyceraldehyde-3-phosphate).</p>
-<p>Rapidly dividing cells (bone marrow, tumors, immune cells) need ribose-5-phosphate for nucleotide synthesis. Cells handling oxidative stress (RBCs, liver, adrenal cortex, lens of eye) need NADPH. The PPP provides both. G6PD deficiency makes the PPP unforgettable because it shows you what happens when this pathway fails.</p>
-</div>
-
-<div class="box box-connect">
-<div class="label">MCAT Concept: X-Linked Inheritance and Malaria (Again)</div>
-<p>G6PD deficiency is X-linked recessive: males are hemizygous and fully affected, females are usually carriers. Like sickle cell trait, G6PD deficiency confers partial resistance to P. falciparum malaria (the parasite is sensitive to oxidative stress, which is elevated in G6PD-deficient RBCs). This explains the high prevalence in malaria-endemic regions: Africa, Mediterranean, Southeast Asia. The MCAT can ask you to compare sickle cell and G6PD as two different genetic strategies for malaria resistance with different inheritance patterns (autosomal recessive vs X-linked recessive).</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Pentose phosphate pathway (oxidative and non-oxidative phases). NADPH production and its critical roles. Glutathione biochemistry (GSH/GSSG cycle, glutathione reductase, glutathione peroxidase). Oxidative stress and reactive oxygen species. RBC metabolism (no mitochondria, glycolysis-dependent, PPP-dependent). Heinz bodies and bite cells on blood smear. X-linked recessive inheritance. Pharmacogenomics (drug-induced hemolysis). Heterozygote advantage and malaria resistance (compare to sickle cell). Thiamine as TPP cofactor in transketolase.</p>
-</div>
-</div>
-
-
-<div class="section" id="sec-marfan">
-<div class="disease-header">
-<h2>Marfan Syndrome</h2>
-<div class="subtitle">When the scaffold fails: connective tissue, signaling, and why structure is function</div>
-<span class="genetics-badge" style="background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)">Autosomal Dominant</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Extracellular Matrix</span><span class="ct ct-blue">TGF-beta Signaling</span><span class="ct ct-green">AD Inheritance</span><span class="ct ct-amber">Cardiovascular Anatomy</span><span class="ct ct-purple">Protein Structure</span><span class="ct ct-teal">Pleiotropy</span>
+<div class="box box-story"><div class="lb">What You Learned From G6PD Deficiency</div>
+<p>Pentose phosphate pathway (oxidative phase: G6PD and 6-phosphogluconate dehydrogenase produce NADPH; non-oxidative phase: transketolase/transaldolase produce ribose-5-phosphate). NADPH biochemistry. Glutathione cycle (GSH/GSSG, glutathione reductase, glutathione peroxidase). Oxidative stress and reactive oxygen species. RBC metabolism (no mitochondria, glycolysis for ATP, PPP for NADPH). Heinz bodies and bite cells. Hemolytic anemia markers (indirect bilirubin, LDH, haptoglobin). X-linked recessive inheritance. Pharmacogenomics. Malaria resistance (heterozygote advantage, compare to sickle cell).</p>
 </div>
 </div>
 
-<div class="prose">
-<p>Marfan syndrome is caused by mutations in <strong>FBN1</strong>, the gene encoding <strong>fibrillin-1</strong>, a glycoprotein that forms microfibrils in the extracellular matrix. Fibrillin-1 serves two roles: it provides structural support to connective tissues (especially in the aortic wall, suspensory ligament of the lens, and periosteum of long bones), and it sequesters <strong>TGF-beta</strong> (transforming growth factor beta), keeping it inactive. When fibrillin-1 is defective, TGF-beta is released and becomes overactive, causing tissue destruction.</p>
+<div class="section" id="sec-marfan">
+<div class="dh"><h2>Marfan Syndrome</h2><div class="st">Connective tissue, TGF-beta, and pleiotropy</div>
+<span class="gb" style="background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)">Autosomal Dominant</span></div>
+
+<p class="p">Marfan is caused by mutations in <strong>FBN1</strong> (fibrillin-1), a glycoprotein that forms microfibrils in the extracellular matrix. Fibrillin-1 does two things: provides structural support and sequesters <strong>TGF-beta</strong>. When fibrillin is defective, TGF-beta is released and overactivates its signaling pathway (serine/threonine kinase receptors that phosphorylate SMAD transcription factors). Excess TGF-beta causes smooth muscle apoptosis in the aortic wall, elastic fiber degradation, and tissue remodeling. The most dangerous complication is <strong>aortic root dilation and dissection</strong>.</p>
+<p class="p">Marfan is a textbook example of <strong>pleiotropy</strong>: one gene produces multiple, seemingly unrelated phenotypes. Because fibrillin-1 is everywhere connective tissue exists, the FBN1 mutation affects the skeletal system (tall stature, long limbs, arachnodactyly, pectus deformity, joint hypermobility), the eyes (lens subluxation upward because the zonular ligaments that suspend the lens are weakened), the cardiovascular system (aortic root dilation, mitral valve prolapse), and the lungs (spontaneous pneumothorax from weakened visceral pleura).</p>
+
+<div class="check" id="mar1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">A patient with Marfan syndrome has a lens that is displaced upward (superiorly). A patient with homocystinuria has a lens displaced downward (inferiorly). What structural component is damaged in both?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('mar1',0,1,`Both conditions damage the zonular fibers that hold the lens in place. In Marfan, the fibers are weak because fibrillin-1 (a component of zonules) is defective. In homocystinuria, excess homocysteine cross-links and damages the zonular fibers. The direction of displacement differs: Marfan = UP, homocystinuria = DOWN. The MCAT loves this comparison.`)"><span class="ck-ltr">A</span><span>The cornea</span></div>
+<div class="ck-opt" onclick="checkAns('mar1',1,1,`Both conditions damage the zonular fibers that hold the lens in place. In Marfan, the fibers are weak because fibrillin-1 (a component of zonules) is defective. In homocystinuria, excess homocysteine cross-links and damages the zonular fibers. The direction of displacement differs: Marfan = UP, homocystinuria = DOWN. The MCAT loves this comparison.`)"><span class="ck-ltr">B</span><span>The zonular fibers (suspensory ligament of the lens)</span></div>
+<div class="ck-opt" onclick="checkAns('mar1',2,1,`Both conditions damage the zonular fibers that hold the lens in place. In Marfan, the fibers are weak because fibrillin-1 (a component of zonules) is defective. In homocystinuria, excess homocysteine cross-links and damages the zonular fibers. The direction of displacement differs: Marfan = UP, homocystinuria = DOWN. The MCAT loves this comparison.`)"><span class="ck-ltr">C</span><span>The ciliary muscle</span></div>
+<div class="ck-opt" onclick="checkAns('mar1',3,1,`Both conditions damage the zonular fibers that hold the lens in place. In Marfan, the fibers are weak because fibrillin-1 (a component of zonules) is defective. In homocystinuria, excess homocysteine cross-links and damages the zonular fibers. The direction of displacement differs: Marfan = UP, homocystinuria = DOWN. The MCAT loves this comparison.`)"><span class="ck-ltr">D</span><span>The vitreous humor</span></div>
+</div>
+<div class="ck-fb" id="mar1-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: The Extracellular Matrix Is Not Just Scaffolding</div>
-<p>The ECM is not passive. It stores growth factors (TGF-beta, FGF, VEGF) and releases them in controlled amounts. Fibrillin-1 microfibrils physically bind TGF-beta and keep it sequestered. When fibrillin is defective, TGF-beta floods the tissue, activating its signaling pathway (TGF-beta binds serine/threonine kinase receptors, which phosphorylate SMAD proteins that translocate to the nucleus and regulate gene expression). Excess TGF-beta in the aortic wall causes smooth muscle apoptosis and elastic fiber degradation, weakening the wall. This is why the most dangerous complication of Marfan is <strong>aortic root dilation and dissection</strong>.</p>
-</div>
-
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Pleiotropy</div>
-<p>Marfan is a perfect example of <strong>pleiotropy</strong>: one gene affects multiple, seemingly unrelated phenotypes. FBN1 mutation produces: tall stature with long limbs and fingers (arachnodactyly) because periosteal growth is abnormal, lens subluxation (ectopia lentis, typically upward) because the suspensory ligament (zonules) is weakened, aortic root dilation because the aortic wall is weakened, mitral valve prolapse because the valve leaflets are redundant, pectus excavatum or carinatum (chest wall deformities), joint hypermobility, and spontaneous pneumothorax (weakened lung connective tissue). All of these come from one gene defect because fibrillin-1 is everywhere connective tissue exists.</p>
-<p>The MCAT may present a patient with several of these features and ask you to identify the underlying genetic defect, or ask which additional finding you would expect.</p>
-</div>
-
-<div class="box box-connect">
-<div class="label">Compare and Contrast: Marfan vs Ehlers-Danlos</div>
-<table class="dt"><tr><th>Feature</th><th>Marfan</th><th>Ehlers-Danlos (Classic)</th></tr>
-<tr><td>Defective protein</td><td>Fibrillin-1</td><td>Collagen (types I, III, V)</td></tr>
-<tr><td>Inheritance</td><td>AD</td><td>AD (most types)</td></tr>
-<tr><td>Lens</td><td>Subluxation (UP and out)</td><td>Normal</td></tr>
-<tr><td>Skin</td><td>Normal or striae</td><td>Hyperelastic, fragile</td></tr>
-<tr><td>Joints</td><td>Hypermobile</td><td>Severely hypermobile</td></tr>
-<tr><td>Aorta</td><td>Dilation/dissection</td><td>Vascular type: vessel rupture</td></tr></table>
-<p>Also compare lens subluxation: Marfan (UP), homocystinuria (DOWN). Homocystinuria is caused by cystathionine beta-synthase deficiency, leading to homocysteine accumulation that damages zonular fibers. The MCAT loves asking which direction the lens dislocates.</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From One Disease</div>
-<p>Extracellular matrix composition and function (fibrillin, collagen, elastin). ECM as a growth factor reservoir. TGF-beta signaling pathway (serine/threonine kinase receptors, SMADs). Pleiotropy (one gene, many phenotypes). Autosomal dominant inheritance with variable expressivity. Aortic anatomy and the mechanics of dissection. Lens anatomy and suspensory ligaments. Comparison to Ehlers-Danlos (collagen disorders) and homocystinuria (lens down vs up). The concept that structural proteins require dominant mutations to cause disease (dominant negative effect).</p>
-</div>
-</div>
-
-
-<div class="section" id="sec-lsd">
-<div class="disease-header">
-<h2>Lysosomal Storage Diseases</h2>
-<div class="subtitle">Tay-Sachs, Gaucher, and Fabry: the cell's recycling center fails, and waste accumulates</div>
-<span class="genetics-badge" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive (most) / X-Linked (Fabry)</span>
-<div class="concepts-taught">
-<span class="ct ct-red">Lysosomes</span><span class="ct ct-blue">Lipid Metabolism</span><span class="ct ct-green">AR Inheritance</span><span class="ct ct-amber">Enzyme Targeting (M6P)</span><span class="ct ct-purple">Neurodegeneration</span><span class="ct ct-teal">Population Genetics</span>
+<div class="box box-story"><div class="lb">What You Learned From Marfan Syndrome</div>
+<p>Extracellular matrix (fibrillin, elastin, collagen). ECM as a growth factor reservoir (TGF-beta sequestration). TGF-beta signaling (serine/threonine kinase receptors, SMADs). Pleiotropy. Aortic anatomy and dissection. Lens anatomy and zonular fibers. Comparison: Marfan (lens up) vs homocystinuria (lens down) vs Ehlers-Danlos (collagen defect). Dominant negative mutations in structural proteins.</p>
 </div>
 </div>
 
-<div class="prose">
-<p>Lysosomes contain over 60 hydrolytic enzymes (proteases, lipases, nucleases, glycosidases) that break down cellular waste at an acidic pH (~4.5-5, maintained by H+-ATPase proton pumps). When a single lysosomal enzyme is deficient, its specific substrate accumulates inside the cell, eventually destroying it. The substrate that accumulates tells you which enzyme is missing, and the cell type most affected tells you the clinical presentation.</p>
+<div class="section" id="sec-lsd">
+<div class="dh"><h2>Lysosomal Storage Diseases</h2><div class="st">Tay-Sachs, Gaucher, and the cell's recycling center</div>
+<span class="gb" style="background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)">Autosomal Recessive (most)</span></div>
+
+<p class="p">Lysosomes are membrane-bound organelles containing 60+ hydrolytic enzymes that operate at <strong>pH ~5</strong> (maintained by V-type H+-ATPase proton pumps that actively transport H+ into the lysosome). Each enzyme degrades a specific substrate. When one enzyme is missing, its substrate accumulates inside the lysosome, swelling the cell and eventually destroying it. The clinical presentation depends on which cell type is most affected.</p>
+
+<p class="p">Lysosomal enzymes reach the lysosome via the <strong>mannose-6-phosphate (M6P) pathway</strong>. In the cis-Golgi, the enzyme N-acetylglucosamine-1-phosphotransferase adds a phosphate to mannose residues on lysosomal enzyme surfaces. M6P receptors in the trans-Golgi recognize this tag and direct the enzymes into clathrin-coated vesicles bound for lysosomes. In <strong>I-cell disease</strong> (inclusion cell disease), the phosphotransferase is defective, so ALL lysosomal enzymes lack the M6P tag, are not directed to lysosomes, and are secreted outside the cell. The lysosomes fill with undigested material. High levels of lysosomal enzymes are found in the patient's blood (they were secreted instead of retained).</p>
+
+<table class="dt"><tr><th>Disease</th><th>Deficient Enzyme</th><th>Accumulated Substrate</th><th>Key Clinical Feature</th></tr>
+<tr><td>Tay-Sachs</td><td>Hexosaminidase A</td><td>GM2 ganglioside</td><td>Cherry-red macula, neurodegeneration, death by 3-4 years, NO hepatosplenomegaly</td></tr>
+<tr><td>Gaucher (Type I)</td><td>Glucocerebrosidase</td><td>Glucocerebroside</td><td>"Crinkled paper" macrophages, hepatosplenomegaly, bone crises; most common LSD</td></tr>
+<tr><td>Niemann-Pick</td><td>Sphingomyelinase</td><td>Sphingomyelin</td><td>Cherry-red macula AND hepatosplenomegaly; "foam cells"</td></tr>
+<tr><td>Fabry</td><td>Alpha-galactosidase A</td><td>Globotriaosylceramide (Gb3)</td><td>Peripheral neuropathy, renal failure; <strong>X-linked recessive (the outlier)</strong></td></tr></table>
+
+<div class="check" id="lsd1">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">Both Tay-Sachs and Niemann-Pick produce a cherry-red spot on the macula. How do you distinguish them clinically?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('lsd1',0,2,`In Tay-Sachs, GM2 ganglioside accumulates primarily in neurons (the brain), so there is NO hepatosplenomegaly. In Niemann-Pick, sphingomyelin accumulates in macrophages throughout the reticuloendothelial system (liver, spleen), causing hepatosplenomegaly. Both have the cherry-red spot because retinal ganglion cells (neurons) are affected in both. The presence or absence of organ enlargement is the distinguishing feature.`)"><span class="ck-ltr">A</span><span>Tay-Sachs has hepatosplenomegaly; Niemann-Pick does not</span></div>
+<div class="ck-opt" onclick="checkAns('lsd1',1,2,`In Tay-Sachs, GM2 ganglioside accumulates primarily in neurons (the brain), so there is NO hepatosplenomegaly. In Niemann-Pick, sphingomyelin accumulates in macrophages throughout the reticuloendothelial system (liver, spleen), causing hepatosplenomegaly. Both have the cherry-red spot because retinal ganglion cells (neurons) are affected in both. The presence or absence of organ enlargement is the distinguishing feature.`)"><span class="ck-ltr">B</span><span>They are indistinguishable clinically</span></div>
+<div class="ck-opt" onclick="checkAns('lsd1',2,2,`In Tay-Sachs, GM2 ganglioside accumulates primarily in neurons (the brain), so there is NO hepatosplenomegaly. In Niemann-Pick, sphingomyelin accumulates in macrophages throughout the reticuloendothelial system (liver, spleen), causing hepatosplenomegaly. Both have the cherry-red spot because retinal ganglion cells (neurons) are affected in both. The presence or absence of organ enlargement is the distinguishing feature.`)"><span class="ck-ltr">C</span><span>Niemann-Pick has hepatosplenomegaly; Tay-Sachs does NOT (ganglioside accumulates only in neurons)</span></div>
+<div class="ck-opt" onclick="checkAns('lsd1',3,2,`In Tay-Sachs, GM2 ganglioside accumulates primarily in neurons (the brain), so there is NO hepatosplenomegaly. In Niemann-Pick, sphingomyelin accumulates in macrophages throughout the reticuloendothelial system (liver, spleen), causing hepatosplenomegaly. Both have the cherry-red spot because retinal ganglion cells (neurons) are affected in both. The presence or absence of organ enlargement is the distinguishing feature.`)"><span class="ck-ltr">D</span><span>Tay-Sachs affects adults; Niemann-Pick affects infants</span></div>
+</div>
+<div class="ck-fb" id="lsd1-fb"></div>
 </div>
 
-<div class="box box-yield">
-<div class="label">MCAT Concept: Lysosomal Enzyme Targeting (Mannose-6-Phosphate)</div>
-<p>Lysosomal enzymes are synthesized in the rough ER and processed in the Golgi, where they receive a <strong>mannose-6-phosphate (M6P) tag</strong>. M6P receptors in the trans-Golgi network recognize this tag and direct the enzymes into vesicles destined for lysosomes. In <strong>I-cell disease</strong> (inclusion cell disease), the enzyme that adds the M6P tag (N-acetylglucosamine-1-phosphotransferase) is defective. ALL lysosomal enzymes are secreted outside the cell instead of being directed to lysosomes. The lysosomes fill with undigested material (inclusions). This disease teaches the entire lysosomal targeting pathway in one step.</p>
+<div class="check" id="lsd2">
+<div class="ck-head">Check Your Understanding</div>
+<div class="ck-q">In I-cell disease, lysosomal enzymes are found at abnormally high levels in the patient blood serum. Why?</div>
+<div class="ck-opts"><div class="ck-opt" onclick="checkAns('lsd2',0,1,`The M6P tag is the address label that directs enzymes to lysosomes. Without it (defective phosphotransferase), the enzymes follow the default pathway and are secreted. They end up in the blood instead of in lysosomes. The lysosomes are empty of enzymes but full of undigested substrates. Finding elevated lysosomal enzymes in the serum is a diagnostic clue for I-cell disease.`)"><span class="ck-ltr">A</span><span>The lysosomes are leaking enzymes into the cytoplasm</span></div>
+<div class="ck-opt" onclick="checkAns('lsd2',1,1,`The M6P tag is the address label that directs enzymes to lysosomes. Without it (defective phosphotransferase), the enzymes follow the default pathway and are secreted. They end up in the blood instead of in lysosomes. The lysosomes are empty of enzymes but full of undigested substrates. Finding elevated lysosomal enzymes in the serum is a diagnostic clue for I-cell disease.`)"><span class="ck-ltr">B</span><span>Without the M6P tag, lysosomal enzymes are not directed to lysosomes and are instead secreted out of the cell via the default secretory pathway</span></div>
+<div class="ck-opt" onclick="checkAns('lsd2',2,1,`The M6P tag is the address label that directs enzymes to lysosomes. Without it (defective phosphotransferase), the enzymes follow the default pathway and are secreted. They end up in the blood instead of in lysosomes. The lysosomes are empty of enzymes but full of undigested substrates. Finding elevated lysosomal enzymes in the serum is a diagnostic clue for I-cell disease.`)"><span class="ck-ltr">C</span><span>The patient is producing too many lysosomal enzymes</span></div>
+<div class="ck-opt" onclick="checkAns('lsd2',3,1,`The M6P tag is the address label that directs enzymes to lysosomes. Without it (defective phosphotransferase), the enzymes follow the default pathway and are secreted. They end up in the blood instead of in lysosomes. The lysosomes are empty of enzymes but full of undigested substrates. Finding elevated lysosomal enzymes in the serum is a diagnostic clue for I-cell disease.`)"><span class="ck-ltr">D</span><span>Red blood cells are releasing lysosomal enzymes during hemolysis</span></div>
+</div>
+<div class="ck-fb" id="lsd2-fb"></div>
 </div>
 
-<div class="box box-chain">
-<div class="label">The Key Diseases and What They Teach</div>
-<table class="dt"><tr><th>Disease</th><th>Deficient Enzyme</th><th>Accumulated Substrate</th><th>Key Feature</th></tr>
-<tr><td>Tay-Sachs</td><td>Hexosaminidase A</td><td>GM2 ganglioside</td><td>Cherry-red spot on macula, progressive neurodegeneration, death by age 3-4</td></tr>
-<tr><td>Gaucher (Type I)</td><td>Glucocerebrosidase</td><td>Glucocerebroside</td><td>"Crinkled paper" macrophages, hepatosplenomegaly, bone pain</td></tr>
-<tr><td>Niemann-Pick</td><td>Sphingomyelinase</td><td>Sphingomyelin</td><td>Cherry-red spot (like Tay-Sachs), hepatosplenomegaly, "foam cells"</td></tr>
-<tr><td>Fabry</td><td>Alpha-galactosidase A</td><td>Globotriaosylceramide</td><td>Peripheral neuropathy, renal failure, <strong>X-linked recessive</strong> (the outlier)</td></tr>
-<tr><td>Krabbe</td><td>Galactocerebrosidase</td><td>Galactocerebroside</td><td>Globoid cells, severe neurodegeneration</td></tr>
-<tr><td>Hurler syndrome</td><td>Alpha-L-iduronidase</td><td>Heparan/dermatan sulfate</td><td>Corneal clouding, coarse facies (a mucopolysaccharidosis)</td></tr></table>
-</div>
-
-<div class="box box-trap">
-<div class="label">MCAT Trap: Cherry-Red Spot</div>
-<p>Both Tay-Sachs and Niemann-Pick produce a cherry-red spot on the macula. The red spot is the normal macula showing through because the surrounding retinal ganglion cells are swollen with accumulated lipid (appearing pale). The MCAT may ask you to distinguish them: Tay-Sachs has NO hepatosplenomegaly (GM2 ganglioside accumulates primarily in neurons). Niemann-Pick HAS hepatosplenomegaly (sphingomyelin accumulates in macrophages of liver and spleen too). If the question mentions organ enlargement, think Niemann-Pick. If it is pure neurodegeneration without organ involvement, think Tay-Sachs.</p>
-</div>
-
-<div class="box box-connect">
-<div class="label">MCAT Concept: Population Genetics in Ashkenazi Jews</div>
-<p>Tay-Sachs, Gaucher, and Niemann-Pick are all more common in Ashkenazi Jewish populations (carrier rates as high as 1 in 30 for Tay-Sachs). This is attributed to the <strong>founder effect</strong>: a small ancestral population carried these alleles at higher-than-average frequency, and the alleles were maintained as the population expanded. Some researchers have proposed heterozygote advantage (similar to sickle cell), though the selective pressure is debated. The MCAT uses these diseases to test population genetics concepts: founder effect, genetic drift, and Hardy-Weinberg calculations in specific populations.</p>
-</div>
-
-<div class="box box-mcat">
-<div class="label">MCAT Concept: Sphingolipid Degradation Pathway</div>
-<p>The lysosomal storage diseases teach you the sphingolipid degradation pathway by showing what accumulates when each step is blocked. Sphingolipids are synthesized from ceramide and degraded by sequential removal of sugar residues and head groups. Each enzyme removes one piece, and deficiency of each enzyme causes a different disease. This is the biological equivalent of an assembly line in reverse: if any one worker on the disassembly line is absent, everything before that step piles up.</p>
-</div>
-
-<div class="box box-story">
-<div class="label">What You Just Learned From These Diseases</div>
-<p>Lysosome function and pH maintenance (H+-ATPase). Enzyme targeting via mannose-6-phosphate (and I-cell disease). Sphingolipid structure and degradation pathway. The relationship between substrate accumulation and clinical phenotype. Cherry-red macula spot mechanism. Hepatosplenomegaly as a sign of macrophage storage. Population genetics: founder effect, genetic drift, Hardy-Weinberg in isolated populations. Autosomal recessive vs X-linked recessive (Fabry is the outlier). Enzyme replacement therapy as treatment principle. Neurodegeneration mechanisms (lipid storage disrupting membrane function).</p>
+<div class="box box-story"><div class="lb">What You Learned From Lysosomal Storage Diseases</div>
+<p>Lysosome function and pH maintenance (V-type H+-ATPase). M6P enzyme targeting pathway (phosphotransferase, M6P receptor, clathrin-coated vesicles). I-cell disease as the "master" lysosomal targeting defect. Sphingolipid degradation pathway. Cherry-red macula mechanism and differential (Tay-Sachs vs Niemann-Pick). Hepatosplenomegaly as a sign of macrophage storage. Population genetics: founder effect in Ashkenazi Jewish populations. AR inheritance (except Fabry = X-linked recessive). Enzyme replacement therapy. Substrate reduction therapy.</p>
 </div>
 </div>
 
 </div>
 <script>
-const sections = ['overview', 'sickle', 'cf', 'huntington', 'pku', 'diabetes', 'g6pd', 'marfan', 'lsd'];
-function showSection(id) {
-  sections.forEach(s => document.getElementById('sec-'+s).classList.toggle('active', s===id));
-  document.querySelectorAll('.nav button').forEach((b,i) => b.classList.toggle('active', sections[i]===id));
+const S = ['overview','sickle','cf','huntington','pku','diabetes','g6pd','marfan','lsd'];
+function showSection(id){
+  S.forEach(s=>document.getElementById('sec-'+s).classList.toggle('active',s===id));
+  document.querySelectorAll('.nav button').forEach((b,i)=>b.classList.toggle('active',S[i]===id));
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function toggleC(el) { el.classList.toggle('open'); el.nextElementSibling.classList.toggle('open'); }
-</script>
-</body>
-</html>
+let qState={};
+function checkAns(qid,sel,correct,fb){
+  if(qState[qid]) return;
+  qState[qid]=true;
+  const opts=document.querySelectorAll('#'+qid+' .ck-opt');
+  opts.forEach((o,i)=>{
+    o.style.pointerEvents='none';
+    if(i===correct) o.classList.add('right');
+    if(i===sel && sel!==correct) o.classList.add('wrongc');
+    if(i===correct && sel!==correct) o.classList.add('reveal');
+  });
+  const fbEl=document.getElementById(qid+'-fb');
+  fbEl.className='ck-fb show '+(sel===correct?'ck-fb-right':'ck-fb-wrong');
+  fbEl.innerHTML=(sel===correct?'<strong>Correct!</strong> ':'<strong>Not quite.</strong> ')+fb;
+}
+</script></body></html>
