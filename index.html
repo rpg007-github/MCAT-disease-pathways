@@ -103,7 +103,38 @@ table.dt tr:hover td{background:rgba(181,67,42,0.02)}
 .idx h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:0.15rem;color:var(--text)}
 .idx .is{font-size:0.85rem;color:var(--text3);margin-bottom:0.5rem}
 @media(max-width:700px){.container{padding:1.5rem 1rem 3rem}.hero{padding:3rem 1.5rem 2.5rem}.chain{font-size:0.78rem}.nav button{padding:0.75rem 0.85rem;font-size:0.78rem}}
+
+/* ─── WCAG 2.1 AA: Visible focus indicators ─── */
+:focus-visible {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+}
+.tab-btn:focus-visible, .nav-btn:focus-visible {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+}
+/* ─── Skip link ─── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: #005fcc;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 0 6px 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 </style></head><body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <div class="hero"><h1>Learn Biology Through <em>Disease</em></h1>
 <p class="sub">Every genetic disease is a natural experiment. Learn systems by understanding what happens when they fail. Deep explanations, comprehension checks, and MCAT examples.</p>
 <span class="concept">Protein Structure</span><span class="concept">Membrane Transport</span><span class="concept">Enzyme Kinetics</span><span class="concept">Signaling</span><span class="concept">Acid-Base</span><span class="concept">Renal</span><span class="concept">Genetics</span><span class="concept">Metabolism</span></div>
@@ -116,7 +147,7 @@ table.dt tr:hover td{background:rgba(181,67,42,0.02)}
 <button  onclick="showSection('g6pd')">G6PD</button>
 <button  onclick="showSection('marfan')">Marfan</button>
 <button  onclick="showSection('lsd')">Lysosomal Storage</button></div>
-<div class="container">
+<div class="container" id="main-content" role="main">
 
 <div class="section active" id="sec-overview">
 <div class="dh"><h2>Learn Biology Through Disease</h2>
